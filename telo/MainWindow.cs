@@ -162,6 +162,18 @@ namespace telo
         {
             ckBox.Checked = false;
         }
+
+        public void lblKatastasi(int idTypouDwmatiou,System.Windows.Forms.Label lbl)
+        {
+            con.Open();
+            string MyQuery = @"SELECT count(ROOMS.arithmosDwmatiou)
+                                 FROM ROOMS
+                                WHERE ROOMS.idTyposDwmatiou = '"+  idTypouDwmatiou + @"'
+                                  AND ROOMS.idDwmatiou NOT IN(SELECT idDwmatiou FROM KRATISEIS)";
+            SqlCommand cmd = new SqlCommand(MyQuery, con);
+            lbl.Text = cmd.ExecuteScalar().ToString();
+            con.Close();
+        }
         #endregion functions
 
         #region tab pelates
@@ -1059,14 +1071,9 @@ namespace telo
 
         private void tabControlKatastasiDwmatiwn_Selected(object sender, TabControlEventArgs e)
         {
-            con.Open();
-            string MyQuery = @"SELECT count(ROOMS.arithmosDwmatiou)
-                                 FROM ROOMS
-                                WHERE ROOMS.idTyposDwmatiou = '1'
-                                  AND ROOMS.idDwmatiou NOT IN(SELECT idDwmatiou FROM KRATISEIS)";
-            SqlCommand cmd = new SqlCommand(MyQuery, con);
-            lblKatastasiDwmatiwnFardiklinaArithmos.Text = cmd.ExecuteScalar().ToString();
-            con.Close();
+            lblKatastasi(1, lblKatastasiDwmatiwnFardiklinaArithmos);
+            lblKatastasi(2, lblKatastasiDwmatiwnDiklinaArithmos);
+            lblKatastasi(3, lblKatastasiDwmatiwnMonoklinaArithmos);
         }
     }
 }

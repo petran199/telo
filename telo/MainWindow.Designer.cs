@@ -172,6 +172,9 @@
             this.lbl_checkOut_add_kratisi = new System.Windows.Forms.Label();
             this.tab_dwmatia = new System.Windows.Forms.TabPage();
             this.grpBoxDiathesimotitaSeLbls = new System.Windows.Forms.GroupBox();
+            this.lblKatastasiDwmatiwnDiklinaArithmos = new System.Windows.Forms.Label();
+            this.lblKatastasiDwmatiwnMonoklinaArithmos = new System.Windows.Forms.Label();
+            this.lblKatastasiDwmatiwnFardiklinaArithmos = new System.Windows.Forms.Label();
             this.lblKatastasiDwmatiwnMonoklina = new System.Windows.Forms.Label();
             this.lblKatastasiDwmatiwnDiklina = new System.Windows.Forms.Label();
             this.lblKatastasiDwmatiwnFardiklina = new System.Windows.Forms.Label();
@@ -180,9 +183,6 @@
             this.rBtnKatastasiDwmatiwnOla = new System.Windows.Forms.RadioButton();
             this.dataGridViewKatastasiDwmatiwn = new System.Windows.Forms.DataGridView();
             this.tab_oikonomika_stoixeia = new System.Windows.Forms.TabPage();
-            this.lblKatastasiDwmatiwnFardiklinaArithmos = new System.Windows.Forms.Label();
-            this.lblKatastasiDwmatiwnMonoklinaArithmos = new System.Windows.Forms.Label();
-            this.lblKatastasiDwmatiwnDiklinaArithmos = new System.Windows.Forms.Label();
             this.tabControlKatastasiDwmatiwn.SuspendLayout();
             this.tab_customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_pelates)).BeginInit();
@@ -1558,6 +1558,30 @@
             this.grpBoxDiathesimotitaSeLbls.TabStop = false;
             this.grpBoxDiathesimotitaSeLbls.Text = "ΔΙΑΘΕΣΙΜΟΤΗΤΑ ΣΥΜΦΩΝΑ ΜΕ ΤΟΝ ΤΥΠΟ ΔΩΜΑΤΙΟΥ";
             // 
+            // lblKatastasiDwmatiwnDiklinaArithmos
+            // 
+            this.lblKatastasiDwmatiwnDiklinaArithmos.AutoSize = true;
+            this.lblKatastasiDwmatiwnDiklinaArithmos.Location = new System.Drawing.Point(245, 32);
+            this.lblKatastasiDwmatiwnDiklinaArithmos.Name = "lblKatastasiDwmatiwnDiklinaArithmos";
+            this.lblKatastasiDwmatiwnDiklinaArithmos.Size = new System.Drawing.Size(0, 13);
+            this.lblKatastasiDwmatiwnDiklinaArithmos.TabIndex = 6;
+            // 
+            // lblKatastasiDwmatiwnMonoklinaArithmos
+            // 
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.AutoSize = true;
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.Location = new System.Drawing.Point(125, 63);
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.Name = "lblKatastasiDwmatiwnMonoklinaArithmos";
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.Size = new System.Drawing.Size(0, 13);
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.TabIndex = 5;
+            // 
+            // lblKatastasiDwmatiwnFardiklinaArithmos
+            // 
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.AutoSize = true;
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.Location = new System.Drawing.Point(136, 32);
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.Name = "lblKatastasiDwmatiwnFardiklinaArithmos";
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.Size = new System.Drawing.Size(0, 13);
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.TabIndex = 4;
+            // 
             // lblKatastasiDwmatiwnMonoklina
             // 
             this.lblKatastasiDwmatiwnMonoklina.AutoSize = true;
@@ -1663,32 +1687,6 @@
             this.tab_oikonomika_stoixeia.TabIndex = 3;
             this.tab_oikonomika_stoixeia.Text = "ΟΙΚΟΝΟΜΙΚΑ ΣΤΟΙΧΕΙΑ";
             this.tab_oikonomika_stoixeia.UseVisualStyleBackColor = true;
-            // 
-            // lblKatastasiDwmatiwnFardiklinaArithmos
-            // 
-            this.lblKatastasiDwmatiwnFardiklinaArithmos.AutoSize = true;
-            this.lblKatastasiDwmatiwnFardiklinaArithmos.Location = new System.Drawing.Point(136, 32);
-            this.lblKatastasiDwmatiwnFardiklinaArithmos.Name = "lblKatastasiDwmatiwnFardiklinaArithmos";
-            this.lblKatastasiDwmatiwnFardiklinaArithmos.Size = new System.Drawing.Size(0, 13);
-            this.lblKatastasiDwmatiwnFardiklinaArithmos.TabIndex = 4;
-            // 
-            // lblKatastasiDwmatiwnMonoklinaArithmos
-            // 
-            this.lblKatastasiDwmatiwnMonoklinaArithmos.AutoSize = true;
-            this.lblKatastasiDwmatiwnMonoklinaArithmos.Location = new System.Drawing.Point(125, 63);
-            this.lblKatastasiDwmatiwnMonoklinaArithmos.Name = "lblKatastasiDwmatiwnMonoklinaArithmos";
-            this.lblKatastasiDwmatiwnMonoklinaArithmos.Size = new System.Drawing.Size(13, 13);
-            this.lblKatastasiDwmatiwnMonoklinaArithmos.TabIndex = 5;
-            this.lblKatastasiDwmatiwnMonoklinaArithmos.Text = "1";
-            // 
-            // lblKatastasiDwmatiwnDiklinaArithmos
-            // 
-            this.lblKatastasiDwmatiwnDiklinaArithmos.AutoSize = true;
-            this.lblKatastasiDwmatiwnDiklinaArithmos.Location = new System.Drawing.Point(245, 32);
-            this.lblKatastasiDwmatiwnDiklinaArithmos.Name = "lblKatastasiDwmatiwnDiklinaArithmos";
-            this.lblKatastasiDwmatiwnDiklinaArithmos.Size = new System.Drawing.Size(13, 13);
-            this.lblKatastasiDwmatiwnDiklinaArithmos.TabIndex = 6;
-            this.lblKatastasiDwmatiwnDiklinaArithmos.Text = "1";
             // 
             // MainWindow
             // 
