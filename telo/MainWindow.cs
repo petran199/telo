@@ -230,6 +230,38 @@ namespace telo
                 con.Close();
             }
         }
+
+        public bool IsEmpty(System.Windows.Forms.GroupBox grbBox)
+        {
+            int count = 0;
+            foreach (Control tb in grbBox.Controls)
+            {
+                if (tb is TextBox)
+                {
+                    if (String.IsNullOrEmpty(tb.Text))
+                    {
+                        count += 1;
+                    }
+                }
+            }
+
+            if (count > 0)
+            {
+                MessageBox.Show("Δεν εχουν συμπληρωθει ολα τα πεδία!");
+                return false;
+            }
+            else
+                return true;
+        }
+
+        public void txtValidationIsEmpty(System.Windows.Forms.TextBox tb)
+        {
+            if (String.IsNullOrEmpty(tb.Text))
+            {
+                MessageBox.Show("Υποχρεωτικό πεδίο!");
+                tb.Focus();
+            }
+        }
         #endregion functions
 
         #region tab pelates
@@ -237,6 +269,12 @@ namespace telo
         //add customer
         private void btn_add_customer_Click(object sender, EventArgs e)
         {
+
+            if (!IsEmpty(grpbox_add_customer))
+            {
+                return;
+            }
+
             con.Open();
 
             SqlCommand myCommand = con.CreateCommand();
