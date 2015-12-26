@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlKatastasiDwmatiwn = new System.Windows.Forms.TabControl();
             this.tab_customers = new System.Windows.Forms.TabPage();
             this.btn_ananewsh_grid_pelatwn = new System.Windows.Forms.Button();
             this.dataGridView_pelates = new System.Windows.Forms.DataGridView();
@@ -172,15 +172,18 @@
             this.lbl_checkOut_add_kratisi = new System.Windows.Forms.Label();
             this.tab_dwmatia = new System.Windows.Forms.TabPage();
             this.grpBoxDiathesimotitaSeLbls = new System.Windows.Forms.GroupBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblKatastasiDwmatiwnMonoklina = new System.Windows.Forms.Label();
+            this.lblKatastasiDwmatiwnDiklina = new System.Windows.Forms.Label();
             this.lblKatastasiDwmatiwnFardiklina = new System.Windows.Forms.Label();
             this.grpBoxKatastasiDwmatiwn = new System.Windows.Forms.GroupBox();
             this.rBtnKatastasiDwmatiwnAdia = new System.Windows.Forms.RadioButton();
             this.rBtnKatastasiDwmatiwnOla = new System.Windows.Forms.RadioButton();
             this.dataGridViewKatastasiDwmatiwn = new System.Windows.Forms.DataGridView();
             this.tab_oikonomika_stoixeia = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.lblKatastasiDwmatiwnFardiklinaArithmos = new System.Windows.Forms.Label();
+            this.lblKatastasiDwmatiwnMonoklinaArithmos = new System.Windows.Forms.Label();
+            this.lblKatastasiDwmatiwnDiklinaArithmos = new System.Windows.Forms.Label();
+            this.tabControlKatastasiDwmatiwn.SuspendLayout();
             this.tab_customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_pelates)).BeginInit();
             this.grpbox_delete_customer.SuspendLayout();
@@ -197,18 +200,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKatastasiDwmatiwn)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlKatastasiDwmatiwn
             // 
-            this.tabControl1.Controls.Add(this.tab_customers);
-            this.tabControl1.Controls.Add(this.tab_kratiseis);
-            this.tabControl1.Controls.Add(this.tab_dwmatia);
-            this.tabControl1.Controls.Add(this.tab_oikonomika_stoixeia);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1268, 730);
-            this.tabControl1.TabIndex = 0;
+            this.tabControlKatastasiDwmatiwn.Controls.Add(this.tab_customers);
+            this.tabControlKatastasiDwmatiwn.Controls.Add(this.tab_kratiseis);
+            this.tabControlKatastasiDwmatiwn.Controls.Add(this.tab_dwmatia);
+            this.tabControlKatastasiDwmatiwn.Controls.Add(this.tab_oikonomika_stoixeia);
+            this.tabControlKatastasiDwmatiwn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.tabControlKatastasiDwmatiwn.Location = new System.Drawing.Point(0, 0);
+            this.tabControlKatastasiDwmatiwn.Name = "tabControlKatastasiDwmatiwn";
+            this.tabControlKatastasiDwmatiwn.SelectedIndex = 0;
+            this.tabControlKatastasiDwmatiwn.Size = new System.Drawing.Size(1268, 730);
+            this.tabControlKatastasiDwmatiwn.TabIndex = 0;
+            this.tabControlKatastasiDwmatiwn.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlKatastasiDwmatiwn_Selected);
             // 
             // tab_customers
             // 
@@ -1541,8 +1545,11 @@
             // 
             // grpBoxDiathesimotitaSeLbls
             // 
-            this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.label21);
-            this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.label20);
+            this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnDiklinaArithmos);
+            this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnMonoklinaArithmos);
+            this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnFardiklinaArithmos);
+            this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnMonoklina);
+            this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnDiklina);
             this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnFardiklina);
             this.grpBoxDiathesimotitaSeLbls.Location = new System.Drawing.Point(839, 14);
             this.grpBoxDiathesimotitaSeLbls.Name = "grpBoxDiathesimotitaSeLbls";
@@ -1551,32 +1558,32 @@
             this.grpBoxDiathesimotitaSeLbls.TabStop = false;
             this.grpBoxDiathesimotitaSeLbls.Text = "ΔΙΑΘΕΣΙΜΟΤΗΤΑ ΣΥΜΦΩΝΑ ΜΕ ΤΟΝ ΤΥΠΟ ΔΩΜΑΤΙΟΥ";
             // 
-            // label21
+            // lblKatastasiDwmatiwnMonoklina
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(43, 63);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(65, 13);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "ΜΟΝΟΚΛΙΝΑ";
+            this.lblKatastasiDwmatiwnMonoklina.AutoSize = true;
+            this.lblKatastasiDwmatiwnMonoklina.Location = new System.Drawing.Point(43, 63);
+            this.lblKatastasiDwmatiwnMonoklina.Name = "lblKatastasiDwmatiwnMonoklina";
+            this.lblKatastasiDwmatiwnMonoklina.Size = new System.Drawing.Size(74, 13);
+            this.lblKatastasiDwmatiwnMonoklina.TabIndex = 3;
+            this.lblKatastasiDwmatiwnMonoklina.Text = "ΜΟΝΟΚΛΙΝΑ =";
             // 
-            // label20
+            // lblKatastasiDwmatiwnDiklina
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(179, 32);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 13);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "ΔΥΚΛΙΝΑ";
+            this.lblKatastasiDwmatiwnDiklina.AutoSize = true;
+            this.lblKatastasiDwmatiwnDiklina.Location = new System.Drawing.Point(179, 32);
+            this.lblKatastasiDwmatiwnDiklina.Name = "lblKatastasiDwmatiwnDiklina";
+            this.lblKatastasiDwmatiwnDiklina.Size = new System.Drawing.Size(60, 13);
+            this.lblKatastasiDwmatiwnDiklina.TabIndex = 2;
+            this.lblKatastasiDwmatiwnDiklina.Text = "ΔΥΚΛΙΝΑ =";
             // 
             // lblKatastasiDwmatiwnFardiklina
             // 
             this.lblKatastasiDwmatiwnFardiklina.AutoSize = true;
             this.lblKatastasiDwmatiwnFardiklina.Location = new System.Drawing.Point(43, 32);
             this.lblKatastasiDwmatiwnFardiklina.Name = "lblKatastasiDwmatiwnFardiklina";
-            this.lblKatastasiDwmatiwnFardiklina.Size = new System.Drawing.Size(75, 13);
+            this.lblKatastasiDwmatiwnFardiklina.Size = new System.Drawing.Size(87, 13);
             this.lblKatastasiDwmatiwnFardiklina.TabIndex = 1;
-            this.lblKatastasiDwmatiwnFardiklina.Text = "ΦΑΡΔΥΚΛΙΝΑ";
+            this.lblKatastasiDwmatiwnFardiklina.Text = "ΦΑΡΔΥΚΛΙΝΑ = ";
             // 
             // grpBoxKatastasiDwmatiwn
             // 
@@ -1657,13 +1664,39 @@
             this.tab_oikonomika_stoixeia.Text = "ΟΙΚΟΝΟΜΙΚΑ ΣΤΟΙΧΕΙΑ";
             this.tab_oikonomika_stoixeia.UseVisualStyleBackColor = true;
             // 
+            // lblKatastasiDwmatiwnFardiklinaArithmos
+            // 
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.AutoSize = true;
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.Location = new System.Drawing.Point(136, 32);
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.Name = "lblKatastasiDwmatiwnFardiklinaArithmos";
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.Size = new System.Drawing.Size(0, 13);
+            this.lblKatastasiDwmatiwnFardiklinaArithmos.TabIndex = 4;
+            // 
+            // lblKatastasiDwmatiwnMonoklinaArithmos
+            // 
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.AutoSize = true;
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.Location = new System.Drawing.Point(125, 63);
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.Name = "lblKatastasiDwmatiwnMonoklinaArithmos";
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.Size = new System.Drawing.Size(13, 13);
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.TabIndex = 5;
+            this.lblKatastasiDwmatiwnMonoklinaArithmos.Text = "1";
+            // 
+            // lblKatastasiDwmatiwnDiklinaArithmos
+            // 
+            this.lblKatastasiDwmatiwnDiklinaArithmos.AutoSize = true;
+            this.lblKatastasiDwmatiwnDiklinaArithmos.Location = new System.Drawing.Point(245, 32);
+            this.lblKatastasiDwmatiwnDiklinaArithmos.Name = "lblKatastasiDwmatiwnDiklinaArithmos";
+            this.lblKatastasiDwmatiwnDiklinaArithmos.Size = new System.Drawing.Size(13, 13);
+            this.lblKatastasiDwmatiwnDiklinaArithmos.TabIndex = 6;
+            this.lblKatastasiDwmatiwnDiklinaArithmos.Text = "1";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1271, 737);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlKatastasiDwmatiwn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -1671,7 +1704,7 @@
             this.Text = "ΔΙΑΧΕΙΡΗΣΗ ΞΕΝΟΔΟΧΕΙΟΥ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlKatastasiDwmatiwn.ResumeLayout(false);
             this.tab_customers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_pelates)).EndInit();
             this.grpbox_delete_customer.ResumeLayout(false);
@@ -1700,7 +1733,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlKatastasiDwmatiwn;
         private System.Windows.Forms.TabPage tab_kratiseis;
         private System.Windows.Forms.TabPage tab_dwmatia;
         private System.Windows.Forms.TabPage tab_oikonomika_stoixeia;
@@ -1818,8 +1851,8 @@
         private System.Windows.Forms.CheckBox ckbox_exoflisiKratisis_editKratisi;
         private System.Windows.Forms.CheckBox checkBox_exoflisiKratisis_add_kratisi;
         private System.Windows.Forms.GroupBox grpBoxDiathesimotitaSeLbls;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblKatastasiDwmatiwnMonoklina;
+        private System.Windows.Forms.Label lblKatastasiDwmatiwnDiklina;
         private System.Windows.Forms.Label lblKatastasiDwmatiwnFardiklina;
         private System.Windows.Forms.GroupBox grpBoxKatastasiDwmatiwn;
         private System.Windows.Forms.RadioButton rBtnKatastasiDwmatiwnAdia;
@@ -1845,5 +1878,8 @@
         private System.Windows.Forms.Button btn_clear_edit_kratisi;
         private System.Windows.Forms.Button btn_clear_add_kratisi;
         private System.Windows.Forms.Button btn_clear_customer_add;
+        private System.Windows.Forms.Label lblKatastasiDwmatiwnFardiklinaArithmos;
+        private System.Windows.Forms.Label lblKatastasiDwmatiwnDiklinaArithmos;
+        private System.Windows.Forms.Label lblKatastasiDwmatiwnMonoklinaArithmos;
     }
 }

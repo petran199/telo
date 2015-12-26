@@ -1022,14 +1022,6 @@ namespace telo
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridViewKatastasiDwmatiwn.DataSource = dt;
-            //lbl
-            string MyQuery = @"SELECT count(ROOMS.arithmosDwmatiou)
-  FROM ROOMS
- WHERE ROOMS.idTyposDwmatiou = '1'
- AND ROOMS.idDwmatiou NOT IN(SELECT idDwmatiou FROM KRATISEIS)";
-            SqlCommand cmd = new SqlCommand(MyQuery, con);
-            lblKatastasiDwmatiwnFardiklina.Text= cmd.ExecuteScalar().ToString();
-
             con.Close();
         }
         #endregion katastasi dwmatiwn
@@ -1065,9 +1057,17 @@ namespace telo
             Application.Exit();
         }
 
-
-
-
+        private void tabControlKatastasiDwmatiwn_Selected(object sender, TabControlEventArgs e)
+        {
+            con.Open();
+            string MyQuery = @"SELECT count(ROOMS.arithmosDwmatiou)
+                                 FROM ROOMS
+                                WHERE ROOMS.idTyposDwmatiou = '1'
+                                  AND ROOMS.idDwmatiou NOT IN(SELECT idDwmatiou FROM KRATISEIS)";
+            SqlCommand cmd = new SqlCommand(MyQuery, con);
+            lblKatastasiDwmatiwnFardiklinaArithmos.Text = cmd.ExecuteScalar().ToString();
+            con.Close();
+        }
     }
 }
 
