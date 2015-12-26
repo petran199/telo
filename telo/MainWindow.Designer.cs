@@ -1627,7 +1627,6 @@
             this.rBtnKatastasiDwmatiwnAdia.Name = "rBtnKatastasiDwmatiwnAdia";
             this.rBtnKatastasiDwmatiwnAdia.Size = new System.Drawing.Size(54, 17);
             this.rBtnKatastasiDwmatiwnAdia.TabIndex = 1;
-            this.rBtnKatastasiDwmatiwnAdia.TabStop = true;
             this.rBtnKatastasiDwmatiwnAdia.Text = "ΑΔΕΙΑ";
             this.rBtnKatastasiDwmatiwnAdia.UseVisualStyleBackColor = true;
             this.rBtnKatastasiDwmatiwnAdia.CheckedChanged += new System.EventHandler(this.rBtnKatastasiDwmatiwnAdia_CheckedChanged);
@@ -1635,6 +1634,7 @@
             // rBtnKatastasiDwmatiwnOla
             // 
             this.rBtnKatastasiDwmatiwnOla.AutoSize = true;
+            this.rBtnKatastasiDwmatiwnOla.Checked = true;
             this.rBtnKatastasiDwmatiwnOla.Location = new System.Drawing.Point(31, 37);
             this.rBtnKatastasiDwmatiwnOla.Name = "rBtnKatastasiDwmatiwnOla";
             this.rBtnKatastasiDwmatiwnOla.Size = new System.Drawing.Size(46, 17);
@@ -1676,7 +1676,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewKatastasiDwmatiwn.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewKatastasiDwmatiwn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(1119, 485);
+            this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(395, 485);
             this.dataGridViewKatastasiDwmatiwn.TabIndex = 23;
             // 
             // tab_oikonomika_stoixeia
