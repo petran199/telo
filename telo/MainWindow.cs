@@ -996,6 +996,44 @@ namespace telo
 
         #endregion tab kratiseis
 
+        #region katastasi dwmatiwn
+        private void rBtnKatastasiDwmatiwnOlaChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(@"SELECT ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
+                                                             ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
+                                                             ROOMTYPE.idTyposDwmatiou as 'ID ΤΥΠΟΥ ΔΩΜΑΤΙΟΥ'
+                                                        FROM ROOMS,ROOMTYPE
+                                                       WHERE ROOMS.idTyposDwmatiou = ROOMTYPE.idTyposDwmatiou", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewKatastasiDwmatiwn.DataSource = dt;
+            con.Close();
+        }
+        private void rBtnKatastasiDwmatiwnAdia_CheckedChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(@"SELECT ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
+                                                             ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
+                                                             ROOMTYPE.idTyposDwmatiou as 'ID ΤΥΠΟΥ ΔΩΜΑΤΙΟΥ'
+                                                        FROM ROOMS,ROOMTYPE
+                                                       WHERE ROOMS.idTyposDwmatiou = ROOMTYPE.idTyposDwmatiou
+                                                         AND ROOMS.idDwmatiou NOT IN(SELECT idDwmatiou FROM KRATISEIS)", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewKatastasiDwmatiwn.DataSource = dt;
+            //lbl
+            string MyQuery = @"SELECT count(ROOMS.arithmosDwmatiou)
+  FROM ROOMS
+ WHERE ROOMS.idTyposDwmatiou = '1'
+ AND ROOMS.idDwmatiou NOT IN(SELECT idDwmatiou FROM KRATISEIS)";
+            SqlCommand cmd = new SqlCommand(MyQuery, con);
+            lblKatastasiDwmatiwnFardiklina.Text= cmd.ExecuteScalar().ToString();
+
+            con.Close();
+        }
+        #endregion katastasi dwmatiwn
+
         private void MainWindow_Load(object sender, EventArgs e)
         {
             //con.Open();
@@ -1027,35 +1065,7 @@ namespace telo
             Application.Exit();
         }
 
-        #region katastasi dwmatiwn
-        private void rBtnKatastasiDwmatiwnOlaChanged(object sender, EventArgs e)
-        {
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter(@"SELECT ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
-                                                             ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
-                                                             ROOMTYPE.idTyposDwmatiou as 'ID ΤΥΠΟΥ ΔΩΜΑΤΙΟΥ'
-                                                        FROM ROOMS,ROOMTYPE
-                                                       WHERE ROOMS.idTyposDwmatiou = ROOMTYPE.idTyposDwmatiou", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dataGridViewKatastasiDwmatiwn.DataSource = dt;
-            con.Close();
-        }
-        private void rBtnKatastasiDwmatiwnAdia_CheckedChanged(object sender, EventArgs e)
-        {
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter(@"SELECT ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
-                                                             ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
-                                                             ROOMTYPE.idTyposDwmatiou as 'ID ΤΥΠΟΥ ΔΩΜΑΤΙΟΥ'
-                                                        FROM ROOMS,ROOMTYPE
-                                                       WHERE ROOMS.idTyposDwmatiou = ROOMTYPE.idTyposDwmatiou
-                                                         AND ROOMS.idDwmatiou NOT IN(SELECT idDwmatiou FROM KRATISEIS)", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dataGridViewKatastasiDwmatiwn.DataSource = dt;
-            con.Close();
-        }
-        #endregion katastasi dwmatiwn
+
 
 
     }
