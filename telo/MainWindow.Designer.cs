@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.tabControlKatastasiDwmatiwn = new System.Windows.Forms.TabControl();
             this.tab_customers = new System.Windows.Forms.TabPage();
-            this.btn_ananewsh_grid_pelatwn = new System.Windows.Forms.Button();
             this.dataGridView_pelates = new System.Windows.Forms.DataGridView();
             this.grpbox_delete_customer = new System.Windows.Forms.GroupBox();
             this.btn_clear_customer_delete = new System.Windows.Forms.Button();
@@ -107,7 +106,6 @@
             this.lbl_country_add_customer = new System.Windows.Forms.Label();
             this.lbl_tel_add_customer = new System.Windows.Forms.Label();
             this.tab_kratiseis = new System.Windows.Forms.TabPage();
-            this.btn_ananewsh_grid_kratisi = new System.Windows.Forms.Button();
             this.dataGridView_kratisi = new System.Windows.Forms.DataGridView();
             this.grpbox_delete_kratisi = new System.Windows.Forms.GroupBox();
             this.btn_clear_delete_kratisi = new System.Windows.Forms.Button();
@@ -210,7 +208,6 @@
             // 
             // tab_customers
             // 
-            this.tab_customers.Controls.Add(this.btn_ananewsh_grid_pelatwn);
             this.tab_customers.Controls.Add(this.dataGridView_pelates);
             this.tab_customers.Controls.Add(this.grpbox_delete_customer);
             this.tab_customers.Controls.Add(this.grpbox_edit_customer);
@@ -222,16 +219,6 @@
             this.tab_customers.TabIndex = 4;
             this.tab_customers.Text = "ΔΙΑΧΕΙΡΗΣΗ ΠΕΛΑΤΩΝ";
             this.tab_customers.UseVisualStyleBackColor = true;
-            // 
-            // btn_ananewsh_grid_pelatwn
-            // 
-            this.btn_ananewsh_grid_pelatwn.Location = new System.Drawing.Point(146, 477);
-            this.btn_ananewsh_grid_pelatwn.Name = "btn_ananewsh_grid_pelatwn";
-            this.btn_ananewsh_grid_pelatwn.Size = new System.Drawing.Size(82, 63);
-            this.btn_ananewsh_grid_pelatwn.TabIndex = 21;
-            this.btn_ananewsh_grid_pelatwn.Text = "ΑΝΑΝΕΩΣΗ ΣΤΟΙΧΕΙΩΝ ΠΙΝΑΚΑ";
-            this.btn_ananewsh_grid_pelatwn.UseVisualStyleBackColor = true;
-            this.btn_ananewsh_grid_pelatwn.Click += new System.EventHandler(this.btn_ananewsh_grid_pelatwn_Click);
             // 
             // dataGridView_pelates
             // 
@@ -930,7 +917,6 @@
             // 
             // tab_kratiseis
             // 
-            this.tab_kratiseis.Controls.Add(this.btn_ananewsh_grid_kratisi);
             this.tab_kratiseis.Controls.Add(this.dataGridView_kratisi);
             this.tab_kratiseis.Controls.Add(this.grpbox_delete_kratisi);
             this.tab_kratiseis.Controls.Add(this.grpbox_edit_kratisi);
@@ -943,16 +929,6 @@
             this.tab_kratiseis.TabIndex = 1;
             this.tab_kratiseis.Text = "ΔΙΑΧΕΙΡΗΣΗ ΚΡΑΤΗΣΕΩΝ";
             this.tab_kratiseis.UseVisualStyleBackColor = true;
-            // 
-            // btn_ananewsh_grid_kratisi
-            // 
-            this.btn_ananewsh_grid_kratisi.Location = new System.Drawing.Point(3, 518);
-            this.btn_ananewsh_grid_kratisi.Name = "btn_ananewsh_grid_kratisi";
-            this.btn_ananewsh_grid_kratisi.Size = new System.Drawing.Size(82, 63);
-            this.btn_ananewsh_grid_kratisi.TabIndex = 23;
-            this.btn_ananewsh_grid_kratisi.Text = "ΑΝΑΝΕΩΣΗ ΣΤΟΙΧΕΙΩΝ ΠΙΝΑΚΑ";
-            this.btn_ananewsh_grid_kratisi.UseVisualStyleBackColor = true;
-            this.btn_ananewsh_grid_kratisi.Click += new System.EventHandler(this.btn_ananewsh_grid_kratisi_Click);
             // 
             // dataGridView_kratisi
             // 
@@ -1754,7 +1730,6 @@
         private System.Windows.Forms.Label lbl_city_delete_customer;
         private System.Windows.Forms.Label lbl_country_delete_customer;
         private System.Windows.Forms.Label lbl_tel_delete_customer;
-        private System.Windows.Forms.Button btn_ananewsh_grid_pelatwn;
         private System.Windows.Forms.DataGridView dataGridView_pelates;
         private System.Windows.Forms.Label lbl_idPelati_edit_customer;
         private System.Windows.Forms.TextBox txtbox_idPelati_edit_customer;
@@ -1781,7 +1756,6 @@
         private System.Windows.Forms.Label lbl_typosKratisis_add_kratisi;
         private System.Windows.Forms.Label lbl_typosDwmatiou_add_kratisi;
         private System.Windows.Forms.Label lbl_checkOut_add_kratisi;
-        private System.Windows.Forms.Button btn_ananewsh_grid_kratisi;
         private System.Windows.Forms.DataGridView dataGridView_kratisi;
         private System.Windows.Forms.Label lbl_idKratisis_delete_kratisi;
         private System.Windows.Forms.Label lbl_idKratisis_edit_kratisi;
