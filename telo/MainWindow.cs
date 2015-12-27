@@ -266,6 +266,24 @@ namespace telo
                 tb.Focus();
             }
         }
+
+        private void IsNumber(object sender, EventArgs e)
+        {
+            double Num;
+            TextBox tb = (TextBox)sender;
+
+            if (!String.IsNullOrEmpty(tb.Text.Trim()))
+            {
+                bool isNum = double.TryParse(tb.Text.Trim(), out Num);
+
+                if (!isNum)
+                {
+                    MessageBox.Show("Λάθος Νούμερο!");
+                    tb.Focus();
+                }
+
+            }
+        }
         #endregion functions
 
         #region tab pelates

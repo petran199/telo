@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlKatastasiDwmatiwn = new System.Windows.Forms.TabControl();
             this.tab_customers = new System.Windows.Forms.TabPage();
             this.btn_ananewsh_grid_pelatwn = new System.Windows.Forms.Button();
@@ -343,6 +337,7 @@
             this.txtbox_arithmosodou_delete_customer.Name = "txtbox_arithmosodou_delete_customer";
             this.txtbox_arithmosodou_delete_customer.Size = new System.Drawing.Size(35, 20);
             this.txtbox_arithmosodou_delete_customer.TabIndex = 36;
+            this.txtbox_arithmosodou_delete_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // txtbox_odos_delete_customer
             // 
@@ -378,6 +373,7 @@
             this.txtbox_tel_delete_customer.Name = "txtbox_tel_delete_customer";
             this.txtbox_tel_delete_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_tel_delete_customer.TabIndex = 32;
+            this.txtbox_tel_delete_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // txtbox_fname_delete_customer
             // 
@@ -392,6 +388,7 @@
             this.txtbox_afm_delete_customer.Name = "txtbox_afm_delete_customer";
             this.txtbox_afm_delete_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_afm_delete_customer.TabIndex = 31;
+            this.txtbox_afm_delete_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // txtbox_taftotita_delete_customer
             // 
@@ -574,6 +571,7 @@
             this.txtbox_arithmosodou_edit_customer.Name = "txtbox_arithmosodou_edit_customer";
             this.txtbox_arithmosodou_edit_customer.Size = new System.Drawing.Size(35, 20);
             this.txtbox_arithmosodou_edit_customer.TabIndex = 36;
+            this.txtbox_arithmosodou_edit_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // txtbox_odos_edit_customer
             // 
@@ -609,6 +607,7 @@
             this.txtbox_tel_edit_customer.Name = "txtbox_tel_edit_customer";
             this.txtbox_tel_edit_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_tel_edit_customer.TabIndex = 32;
+            this.txtbox_tel_edit_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // txtbox_fname_edit_customer
             // 
@@ -623,6 +622,7 @@
             this.txtbox_afm_edit_customer.Name = "txtbox_afm_edit_customer";
             this.txtbox_afm_edit_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_afm_edit_customer.TabIndex = 31;
+            this.txtbox_afm_edit_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // txtbox_taftotita_edit_customer
             // 
@@ -805,6 +805,7 @@
             this.txtbox_arithmosodou_add_customer.Name = "txtbox_arithmosodou_add_customer";
             this.txtbox_arithmosodou_add_customer.Size = new System.Drawing.Size(35, 20);
             this.txtbox_arithmosodou_add_customer.TabIndex = 16;
+            this.txtbox_arithmosodou_add_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // lbl_fname_add_customer
             // 
@@ -867,6 +868,7 @@
             this.txtbox_tel_add_customer.Name = "txtbox_tel_add_customer";
             this.txtbox_tel_add_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_tel_add_customer.TabIndex = 12;
+            this.txtbox_tel_add_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // txtbox_fname_add_customer
             // 
@@ -890,6 +892,7 @@
             this.txtbox_afm_add_customer.Name = "txtbox_afm_add_customer";
             this.txtbox_afm_add_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_afm_add_customer.TabIndex = 11;
+            this.txtbox_afm_add_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // lbl_city_add_customer
             // 
@@ -955,33 +958,9 @@
             // 
             this.dataGridView_kratisi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_kratisi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_kratisi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_kratisi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_kratisi.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_kratisi.Location = new System.Drawing.Point(91, 453);
             this.dataGridView_kratisi.Name = "dataGridView_kratisi";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_kratisi.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_kratisi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_kratisi.Size = new System.Drawing.Size(1163, 221);
             this.dataGridView_kratisi.TabIndex = 22;
@@ -1648,33 +1627,9 @@
             // 
             this.dataGridViewKatastasiDwmatiwn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewKatastasiDwmatiwn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewKatastasiDwmatiwn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewKatastasiDwmatiwn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewKatastasiDwmatiwn.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewKatastasiDwmatiwn.Location = new System.Drawing.Point(40, 112);
             this.dataGridViewKatastasiDwmatiwn.Name = "dataGridViewKatastasiDwmatiwn";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewKatastasiDwmatiwn.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewKatastasiDwmatiwn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(509, 485);
             this.dataGridViewKatastasiDwmatiwn.TabIndex = 23;
