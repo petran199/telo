@@ -1676,7 +1676,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewKatastasiDwmatiwn.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewKatastasiDwmatiwn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(395, 485);
+            this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(509, 485);
             this.dataGridViewKatastasiDwmatiwn.TabIndex = 23;
             // 
             // tab_oikonomika_stoixeia
