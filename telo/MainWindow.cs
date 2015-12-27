@@ -247,7 +247,6 @@ namespace telo
 
             if (count > 0)
             {
-                MessageBox.Show("Δεν εχουν συμπληρωθει ολα τα πεδία!");
                 return false;
             }
             else
@@ -270,8 +269,9 @@ namespace telo
         private void btn_add_customer_Click(object sender, EventArgs e)
         {
 
-            if (!IsEmpty(grpbox_add_customer))
+            if (!IsEmpty(grpbox_add_customer) || comboBox_group_add_customer.SelectedIndex == 0) //Empty textboxes
             {
+                MessageBox.Show("Δεν εχουν συμπληρωθει ολα τα πεδία!");
                 return;
             }
 
