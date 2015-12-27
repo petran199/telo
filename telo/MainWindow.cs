@@ -56,15 +56,11 @@ namespace telo
                                          ROOMS.idTyposDwmatiou=ROOMTYPE.idTyposDwmatiou
                                 ORDER BY hmerominiaAfixis DESC ", dataGridView_kratisi);
             //gridrefreesh katastasi dwmatiwn
-            dataGridViewRefresh(@"select r.arithmosDwmatiou AS 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ', rt.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ', tk.perigrafi as 'ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ', datediff(day,kr.hmerominiaAfixis, kr.hmerominiaAnaxwrisis) as 'ΗΜΕΡΕΣ ΚΡΑΤΗΣΗΣ'
-  from ROOMS r 
-  left join ROOMTYPE rt
-         on r.idTyposDwmatiou = rt.idTyposDwmatiou
-  left join KRATISEIS kr
-         on kr.idDwmatiou = r.idDwmatiou
-  left join TyposKratisis tk
-         on tk.idTyposKratisis = kr.idTyposKratisis
-", dataGridViewKatastasiDwmatiwn);
+            dataGridViewRefresh(@"SELECT ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
+                                         ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
+                                         ROOMTYPE.idTyposDwmatiou as 'ID ΤΥΠΟΥ ΔΩΜΑΤΙΟΥ'
+                                    FROM ROOMS,ROOMTYPE
+                                   WHERE ROOMS.idTyposDwmatiou = ROOMTYPE.idTyposDwmatiou", dataGridViewKatastasiDwmatiwn);
 }
 
         #region global variables
@@ -251,7 +247,6 @@ namespace telo
 
             if (count > 0)
             {
-                MessageBox.Show("Δεν εχουν συμπληρωθει ολα τα πεδία!");
                 return false;
             }
             else
@@ -292,8 +287,9 @@ namespace telo
         private void btn_add_customer_Click(object sender, EventArgs e)
         {
 
-            if (!IsEmpty(grpbox_add_customer))
+            if (!IsEmpty(grpbox_add_customer) || comboBox_group_add_customer.SelectedIndex == 0) //Empty textboxes
             {
+                MessageBox.Show("Δεν εχουν συμπληρωθει ολα τα πεδία!");
                 return;
             }
 
@@ -1229,34 +1225,20 @@ namespace telo
         #region katastasi dwmatiwn
         private void rBtnKatastasiDwmatiwnOlaChanged(object sender, EventArgs e)
         {
-            dataGridViewRefresh(@"select r.arithmosDwmatiou AS 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
-                                         rt.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
-                                         tk.perigrafi as 'ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ',
-                                         datediff(day,kr.hmerominiaAfixis, kr.hmerominiaAnaxwrisis) as 'ΗΜΕΡΕΣ ΚΡΑΤΗΣΗΣ'
-                                    from ROOMS r 
-                               left join ROOMTYPE rt
-                                      on r.idTyposDwmatiou = rt.idTyposDwmatiou
-                               left join KRATISEIS kr
-                                      on kr.idDwmatiou = r.idDwmatiou
-                               left join TyposKratisis tk
-                                      on tk.idTyposKratisis = kr.idTyposKratisis
-                                            ", dataGridViewKatastasiDwmatiwn);
+            dataGridViewRefresh(@"SELECT ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
+                                         ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
+                                         ROOMTYPE.idTyposDwmatiou as 'ID ΤΥΠΟΥ ΔΩΜΑΤΙΟΥ'
+                                    FROM ROOMS,ROOMTYPE
+                                   WHERE ROOMS.idTyposDwmatiou = ROOMTYPE.idTyposDwmatiou", dataGridViewKatastasiDwmatiwn);
         }
         private void rBtnKatastasiDwmatiwnAdia_CheckedChanged(object sender, EventArgs e)
         {
-            dataGridViewRefresh(@"select r.arithmosDwmatiou AS 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
-                                         rt.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
-                                         tk.perigrafi as 'ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ',
-                                         datediff(day,kr.hmerominiaAfixis,
-                                         kr.hmerominiaAnaxwrisis) as 'ΗΜΕΡΕΣ ΚΡΑΤΗΣΗΣ'
-                                    from ROOMS r 
-                               left join ROOMTYPE rt
-                                      on r.idTyposDwmatiou = rt.idTyposDwmatiou
-                               left join KRATISEIS kr
-                                      on kr.idDwmatiou = r.idDwmatiou
-                               left join TyposKratisis tk
-                                      on tk.idTyposKratisis = kr.idTyposKratisis
-	where datediff(day,kr.hmerominiaAfixis, kr.hmerominiaAnaxwrisis) is null", dataGridViewKatastasiDwmatiwn);            
+            dataGridViewRefresh(@"SELECT ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
+                                          ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
+                                          ROOMTYPE.idTyposDwmatiou as 'ID ΤΥΠΟΥ ΔΩΜΑΤΙΟΥ'
+                                     FROM ROOMS,ROOMTYPE
+                                    WHERE ROOMS.idTyposDwmatiou = ROOMTYPE.idTyposDwmatiou
+                                      AND ROOMS.idDwmatiou NOT IN(SELECT idDwmatiou FROM KRATISEIS)", dataGridViewKatastasiDwmatiwn);            
         }
         #endregion katastasi dwmatiwn
 
