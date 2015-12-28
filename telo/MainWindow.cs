@@ -15,7 +15,7 @@ namespace telo
     {
         public MainWindow()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         #region global variables
@@ -177,6 +177,16 @@ namespace telo
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgv.DataSource = dt;
+
+                foreach (DataGridViewRow row in dataGridViewKatastasiDwmatiwn.Rows)
+                {
+                    if (row.Cells.Cast<DataGridViewCell>().Any(c => c.Value == null || string.IsNullOrWhiteSpace(c.Value.ToString())))
+                    {
+
+                        row.DefaultCellStyle.BackColor = Color.Green;
+                    }
+                    else row.DefaultCellStyle.BackColor = Color.Red;
+                }
                 con.Close();
             }
         }
@@ -230,6 +240,24 @@ namespace telo
                 }
 
             }
+        }
+
+        public void RowsColor()
+        {
+            
+            //for(int i=0; i<dataGridViewKatastasiDwmatiwn.RowCount-1;i++)
+            //{
+            //    int val = Convert.ToInt32(dataGridViewKatastasiDwmatiwn.Rows[i].Cells[2].Value.ToString());
+
+            //    if(val==0)
+            //    {
+            //        dataGridViewKatastasiDwmatiwn.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+            //    }
+            //    else
+            //    {
+            //        dataGridViewKatastasiDwmatiwn.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+            //    }
+            //}
         }
         #endregion functions
 
@@ -391,7 +419,7 @@ namespace telo
                     myCommand.ExecuteNonQuery();
                     myTrans.Commit();
                     MessageBox.Show("ΕΝΗΜΕΡΩΘΗΚΕ ΕΠΙΤΥΧΩΣ");
-                    //grid refresh
+                    //grid refresh edit customer
                     dataGridViewRefresh(@"select CUSTOMERS.idPElati AS 'ID ΠΕΛΑΤΗ',
                                                  [GROUP].perigrafi AS 'ΓΚΡΟΥΠ',
                                                  CUSTOMERS.epwnimo AS ΕΠΩΝΥΜΟ,
@@ -1040,7 +1068,7 @@ namespace telo
             dataGridViewRefresh(@"select r.arithmosDwmatiou,
                                          rt.perigrafi AS 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
                                          tk.perigrafi AS 'ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ',
-                                         datediff(day,kr.hmerominiaAfixis,kr.hmerominiaAnaxwrisis) as 'ΗΜΕΡΕΣ ΚΡΑΤΗΣΗΣ'
+                                         datediff(day,kr.hmerominiaAfixis,kr.hmerominiaAnaxwrisis) as 'ΑΡΙΘΜΟΣ ΔΙΑΝΥΚΤΕΡΕΥΣΕΩΝ'
                                     from ROOMS r 
                                     left join ROOMTYPE rt
                                       on r.idTyposDwmatiou = rt.idTyposDwmatiou
@@ -1054,7 +1082,7 @@ namespace telo
             dataGridViewRefresh(@"select r.arithmosDwmatiou,
                                          rt.perigrafi AS 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
                                          tk.perigrafi AS 'ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ',
-                                         datediff(day,kr.hmerominiaAfixis,kr.hmerominiaAnaxwrisis) as 'ΗΜΕΡΕΣ ΚΡΑΤΗΣΗΣ'
+                                         datediff(day,kr.hmerominiaAfixis,kr.hmerominiaAnaxwrisis) as 'ΑΡΙΘΜΟΣ ΔΙΑΝΥΚΤΕΡΕΥΣΕΩΝ'
                                     from ROOMS r 
                                     left join ROOMTYPE rt
                                       on r.idTyposDwmatiou = rt.idTyposDwmatiou
@@ -1111,7 +1139,7 @@ namespace telo
             dataGridViewRefresh(@"select r.arithmosDwmatiou,
                                          rt.perigrafi AS 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
                                          tk.perigrafi AS 'ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ',
-                                         datediff(day,kr.hmerominiaAfixis,kr.hmerominiaAnaxwrisis) as 'ΗΜΕΡΕΣ ΚΡΑΤΗΣΗΣ'
+                                         datediff(day,kr.hmerominiaAfixis,kr.hmerominiaAnaxwrisis) as 'ΑΡΙΘΜΟΣ ΔΙΑΝΥΚΤΕΡΕΥΣΕΩΝ'
                                     from ROOMS r 
                                     left join ROOMTYPE rt
                                       on r.idTyposDwmatiou = rt.idTyposDwmatiou
@@ -1154,6 +1182,18 @@ namespace telo
             lblKatastasi(2, lblKatastasiDwmatiwnDiklinaArithmos);
             //arithmos adeiwn monoklina
             lblKatastasi(3, lblKatastasiDwmatiwnMonoklinaArithmos);
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dataGridViewKatastasiDwmatiwn.Width, this.dataGridViewKatastasiDwmatiwn.Height);
+            dataGridViewKatastasiDwmatiwn.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridViewKatastasiDwmatiwn.Width, this.dataGridViewKatastasiDwmatiwn.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+        }
+
+        private void btnPrintKatastasiDwmatiwn_Click(object sender, EventArgs e)
+        {
+            printDocumentKatastasiDwmatiwn.Print();
         }
     }
 }

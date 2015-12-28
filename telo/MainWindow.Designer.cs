@@ -175,6 +175,8 @@
             this.rBtnKatastasiDwmatiwnOla = new System.Windows.Forms.RadioButton();
             this.dataGridViewKatastasiDwmatiwn = new System.Windows.Forms.DataGridView();
             this.tab_oikonomika_stoixeia = new System.Windows.Forms.TabPage();
+            this.printDocumentKatastasiDwmatiwn = new System.Drawing.Printing.PrintDocument();
+            this.btnPrintKatastasiDwmatiwn = new System.Windows.Forms.Button();
             this.tabControlKatastasiDwmatiwn.SuspendLayout();
             this.tab_customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_pelates)).BeginInit();
@@ -1487,6 +1489,7 @@
             // 
             // tab_dwmatia
             // 
+            this.tab_dwmatia.Controls.Add(this.btnPrintKatastasiDwmatiwn);
             this.tab_dwmatia.Controls.Add(this.grpBoxDiathesimotitaSeLbls);
             this.tab_dwmatia.Controls.Add(this.grpBoxKatastasiDwmatiwn);
             this.tab_dwmatia.Controls.Add(this.dataGridViewKatastasiDwmatiwn);
@@ -1618,6 +1621,20 @@
             this.tab_oikonomika_stoixeia.TabIndex = 3;
             this.tab_oikonomika_stoixeia.Text = "ΟΙΚΟΝΟΜΙΚΑ ΣΤΟΙΧΕΙΑ";
             this.tab_oikonomika_stoixeia.UseVisualStyleBackColor = true;
+            // 
+            // printDocumentKatastasiDwmatiwn
+            // 
+            this.printDocumentKatastasiDwmatiwn.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // btnPrintKatastasiDwmatiwn
+            // 
+            this.btnPrintKatastasiDwmatiwn.Location = new System.Drawing.Point(788, 373);
+            this.btnPrintKatastasiDwmatiwn.Name = "btnPrintKatastasiDwmatiwn";
+            this.btnPrintKatastasiDwmatiwn.Size = new System.Drawing.Size(75, 23);
+            this.btnPrintKatastasiDwmatiwn.TabIndex = 26;
+            this.btnPrintKatastasiDwmatiwn.Text = "ΕΚΤΥΠΩΣΗ";
+            this.btnPrintKatastasiDwmatiwn.UseVisualStyleBackColor = true;
+            this.btnPrintKatastasiDwmatiwn.Click += new System.EventHandler(this.btnPrintKatastasiDwmatiwn_Click);
             // 
             // MainWindow
             // 
@@ -1808,5 +1825,7 @@
         private System.Windows.Forms.Label lblKatastasiDwmatiwnFardiklinaArithmos;
         private System.Windows.Forms.Label lblKatastasiDwmatiwnDiklinaArithmos;
         private System.Windows.Forms.Label lblKatastasiDwmatiwnMonoklinaArithmos;
+        private System.Drawing.Printing.PrintDocument printDocumentKatastasiDwmatiwn;
+        private System.Windows.Forms.Button btnPrintKatastasiDwmatiwn;
     }
 }
