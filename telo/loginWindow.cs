@@ -18,9 +18,7 @@ namespace telo
 
         public loginWindow()
         {
-            
             InitializeComponent();
-            this.Hide();
             MainWindow mW = new MainWindow();
             mW.Show();
         }

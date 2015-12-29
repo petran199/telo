@@ -85,7 +85,6 @@
             this.grpbox_add_customer = new System.Windows.Forms.GroupBox();
             this.btn_clear_customer_add = new System.Windows.Forms.Button();
             this.comboBox_group_add_customer = new System.Windows.Forms.ComboBox();
-            this.btn_search_customer_add = new System.Windows.Forms.Button();
             this.btn_add_customer = new System.Windows.Forms.Button();
             this.lbl_grp_ckbox_add_customer = new System.Windows.Forms.Label();
             this.lbl_lname_add_customer = new System.Windows.Forms.Label();
@@ -163,6 +162,7 @@
             this.lbl_typosDwmatiou_add_kratisi = new System.Windows.Forms.Label();
             this.lbl_checkOut_add_kratisi = new System.Windows.Forms.Label();
             this.tab_dwmatia = new System.Windows.Forms.TabPage();
+            this.btnPrintKatastasiDwmatiwn = new System.Windows.Forms.Button();
             this.grpBoxDiathesimotitaSeLbls = new System.Windows.Forms.GroupBox();
             this.lblKatastasiDwmatiwnDiklinaArithmos = new System.Windows.Forms.Label();
             this.lblKatastasiDwmatiwnMonoklinaArithmos = new System.Windows.Forms.Label();
@@ -175,8 +175,20 @@
             this.rBtnKatastasiDwmatiwnOla = new System.Windows.Forms.RadioButton();
             this.dataGridViewKatastasiDwmatiwn = new System.Windows.Forms.DataGridView();
             this.tab_oikonomika_stoixeia = new System.Windows.Forms.TabPage();
+            this.txtboxSunoloXrewsisOikonomika = new System.Windows.Forms.TextBox();
+            this.lblSinolikiXrewsiOikonomika = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtboxHmerominiaAnaxwrisisOikonomika = new System.Windows.Forms.TextBox();
+            this.txtboxHmerominaAfixisOikonomika = new System.Windows.Forms.TextBox();
+            this.lblArithmosDianikterefsewnOikonomika = new System.Windows.Forms.Label();
+            this.txtboxArithmosDianikterefsewnOikonomika = new System.Windows.Forms.TextBox();
+            this.txtboxOnomatepwnimoOikonomika = new System.Windows.Forms.TextBox();
+            this.lblOnomaPelatiOkonomika = new System.Windows.Forms.Label();
+            this.btnSearchTaftotitaOikonomika = new System.Windows.Forms.Button();
+            this.lblTaftotitaOikonomikaStoixeia = new System.Windows.Forms.Label();
+            this.txtboxTaftotitaOikonomikaStoixeia = new System.Windows.Forms.TextBox();
             this.printDocumentKatastasiDwmatiwn = new System.Drawing.Printing.PrintDocument();
-            this.btnPrintKatastasiDwmatiwn = new System.Windows.Forms.Button();
             this.tabControlKatastasiDwmatiwn.SuspendLayout();
             this.tab_customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_pelates)).BeginInit();
@@ -192,6 +204,7 @@
             this.grpBoxDiathesimotitaSeLbls.SuspendLayout();
             this.grpBoxKatastasiDwmatiwn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKatastasiDwmatiwn)).BeginInit();
+            this.tab_oikonomika_stoixeia.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlKatastasiDwmatiwn
@@ -230,7 +243,7 @@
             this.dataGridView_pelates.Location = new System.Drawing.Point(265, 436);
             this.dataGridView_pelates.Name = "dataGridView_pelates";
             this.dataGridView_pelates.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_pelates.Size = new System.Drawing.Size(860, 223);
+            this.dataGridView_pelates.Size = new System.Drawing.Size(859, 223);
             this.dataGridView_pelates.TabIndex = 20;
             // 
             // grpbox_delete_customer
@@ -533,6 +546,7 @@
             this.txtbox_idPelati_edit_customer.Name = "txtbox_idPelati_edit_customer";
             this.txtbox_idPelati_edit_customer.Size = new System.Drawing.Size(40, 20);
             this.txtbox_idPelati_edit_customer.TabIndex = 40;
+            this.txtbox_idPelati_edit_customer.Leave += new System.EventHandler(this.IsNumber);
             // 
             // btn_edit_customer
             // 
@@ -705,7 +719,6 @@
             // 
             this.grpbox_add_customer.Controls.Add(this.btn_clear_customer_add);
             this.grpbox_add_customer.Controls.Add(this.comboBox_group_add_customer);
-            this.grpbox_add_customer.Controls.Add(this.btn_search_customer_add);
             this.grpbox_add_customer.Controls.Add(this.btn_add_customer);
             this.grpbox_add_customer.Controls.Add(this.lbl_grp_ckbox_add_customer);
             this.grpbox_add_customer.Controls.Add(this.lbl_lname_add_customer);
@@ -749,16 +762,6 @@
             this.comboBox_group_add_customer.Name = "comboBox_group_add_customer";
             this.comboBox_group_add_customer.Size = new System.Drawing.Size(100, 21);
             this.comboBox_group_add_customer.TabIndex = 22;
-            // 
-            // btn_search_customer_add
-            // 
-            this.btn_search_customer_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_search_customer_add.Image")));
-            this.btn_search_customer_add.Location = new System.Drawing.Point(277, 33);
-            this.btn_search_customer_add.Name = "btn_search_customer_add";
-            this.btn_search_customer_add.Size = new System.Drawing.Size(32, 32);
-            this.btn_search_customer_add.TabIndex = 20;
-            this.btn_search_customer_add.UseVisualStyleBackColor = true;
-            this.btn_search_customer_add.Click += new System.EventHandler(this.btn_search_customer_add_Click);
             // 
             // btn_add_customer
             // 
@@ -811,6 +814,7 @@
             this.txtbox_odos_add_customer.Name = "txtbox_odos_add_customer";
             this.txtbox_odos_add_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_odos_add_customer.TabIndex = 15;
+            this.txtbox_odos_add_customer.Leave += new System.EventHandler(this.isText);
             // 
             // lbl_taftotita_add_customer
             // 
@@ -827,6 +831,7 @@
             this.txtbox_city_add_customer.Name = "txtbox_city_add_customer";
             this.txtbox_city_add_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_city_add_customer.TabIndex = 14;
+            this.txtbox_city_add_customer.Leave += new System.EventHandler(this.isText);
             // 
             // lbl_afm_add_customer
             // 
@@ -843,6 +848,7 @@
             this.txtbox_country_add_customer.Name = "txtbox_country_add_customer";
             this.txtbox_country_add_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_country_add_customer.TabIndex = 13;
+            this.txtbox_country_add_customer.Leave += new System.EventHandler(this.isText);
             // 
             // txtbox_lname_add_customer
             // 
@@ -850,6 +856,7 @@
             this.txtbox_lname_add_customer.Name = "txtbox_lname_add_customer";
             this.txtbox_lname_add_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_lname_add_customer.TabIndex = 8;
+            this.txtbox_lname_add_customer.Leave += new System.EventHandler(this.isText);
             // 
             // txtbox_tel_add_customer
             // 
@@ -865,6 +872,7 @@
             this.txtbox_fname_add_customer.Name = "txtbox_fname_add_customer";
             this.txtbox_fname_add_customer.Size = new System.Drawing.Size(100, 20);
             this.txtbox_fname_add_customer.TabIndex = 9;
+            this.txtbox_fname_add_customer.Leave += new System.EventHandler(this.isText);
             // 
             // lbl_odos_arithmos_add_customer
             // 
@@ -992,6 +1000,7 @@
             this.txtbox_idKratisis_deleteKratisi.Name = "txtbox_idKratisis_deleteKratisi";
             this.txtbox_idKratisis_deleteKratisi.Size = new System.Drawing.Size(100, 20);
             this.txtbox_idKratisis_deleteKratisi.TabIndex = 44;
+            this.txtbox_idKratisis_deleteKratisi.Leave += new System.EventHandler(this.IsNumber);
             // 
             // lbl_idKratisis_delete_kratisi
             // 
@@ -1170,6 +1179,7 @@
             this.txtbox_idKratisis_editKratisi.Name = "txtbox_idKratisis_editKratisi";
             this.txtbox_idKratisis_editKratisi.Size = new System.Drawing.Size(166, 20);
             this.txtbox_idKratisis_editKratisi.TabIndex = 41;
+            this.txtbox_idKratisis_editKratisi.Leave += new System.EventHandler(this.IsNumber);
             // 
             // lbl_troposPliromis_editKratisi
             // 
@@ -1269,6 +1279,7 @@
             this.txtbox_idPelati_editKratisi.Name = "txtbox_idPelati_editKratisi";
             this.txtbox_idPelati_editKratisi.Size = new System.Drawing.Size(166, 20);
             this.txtbox_idPelati_editKratisi.TabIndex = 8;
+            this.txtbox_idPelati_editKratisi.Leave += new System.EventHandler(this.IsNumber);
             // 
             // txtbox_taftotitaPelati_editKratisi
             // 
@@ -1501,6 +1512,16 @@
             this.tab_dwmatia.Text = "ΚΑΤΑΣΤΑΣΗ ΔΩΜΑΤΙΩΝ";
             this.tab_dwmatia.UseVisualStyleBackColor = true;
             // 
+            // btnPrintKatastasiDwmatiwn
+            // 
+            this.btnPrintKatastasiDwmatiwn.Location = new System.Drawing.Point(525, 637);
+            this.btnPrintKatastasiDwmatiwn.Name = "btnPrintKatastasiDwmatiwn";
+            this.btnPrintKatastasiDwmatiwn.Size = new System.Drawing.Size(75, 23);
+            this.btnPrintKatastasiDwmatiwn.TabIndex = 26;
+            this.btnPrintKatastasiDwmatiwn.Text = "ΕΚΤΥΠΩΣΗ";
+            this.btnPrintKatastasiDwmatiwn.UseVisualStyleBackColor = true;
+            this.btnPrintKatastasiDwmatiwn.Click += new System.EventHandler(this.btnPrintKatastasiDwmatiwn_Click);
+            // 
             // grpBoxDiathesimotitaSeLbls
             // 
             this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnDiklinaArithmos);
@@ -1610,11 +1631,24 @@
             this.dataGridViewKatastasiDwmatiwn.Location = new System.Drawing.Point(40, 112);
             this.dataGridViewKatastasiDwmatiwn.Name = "dataGridViewKatastasiDwmatiwn";
             this.dataGridViewKatastasiDwmatiwn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(509, 485);
+            this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(560, 485);
             this.dataGridViewKatastasiDwmatiwn.TabIndex = 23;
             // 
             // tab_oikonomika_stoixeia
             // 
+            this.tab_oikonomika_stoixeia.Controls.Add(this.txtboxSunoloXrewsisOikonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.lblSinolikiXrewsiOikonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.label2);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.label1);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.txtboxHmerominiaAnaxwrisisOikonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.txtboxHmerominaAfixisOikonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.lblArithmosDianikterefsewnOikonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.txtboxArithmosDianikterefsewnOikonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.txtboxOnomatepwnimoOikonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.lblOnomaPelatiOkonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.btnSearchTaftotitaOikonomika);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.lblTaftotitaOikonomikaStoixeia);
+            this.tab_oikonomika_stoixeia.Controls.Add(this.txtboxTaftotitaOikonomikaStoixeia);
             this.tab_oikonomika_stoixeia.Location = new System.Drawing.Point(4, 22);
             this.tab_oikonomika_stoixeia.Name = "tab_oikonomika_stoixeia";
             this.tab_oikonomika_stoixeia.Size = new System.Drawing.Size(1260, 704);
@@ -1622,19 +1656,121 @@
             this.tab_oikonomika_stoixeia.Text = "ΟΙΚΟΝΟΜΙΚΑ ΣΤΟΙΧΕΙΑ";
             this.tab_oikonomika_stoixeia.UseVisualStyleBackColor = true;
             // 
+            // txtboxSunoloXrewsisOikonomika
+            // 
+            this.txtboxSunoloXrewsisOikonomika.Location = new System.Drawing.Point(203, 288);
+            this.txtboxSunoloXrewsisOikonomika.Name = "txtboxSunoloXrewsisOikonomika";
+            this.txtboxSunoloXrewsisOikonomika.ReadOnly = true;
+            this.txtboxSunoloXrewsisOikonomika.Size = new System.Drawing.Size(182, 20);
+            this.txtboxSunoloXrewsisOikonomika.TabIndex = 31;
+            // 
+            // lblSinolikiXrewsiOikonomika
+            // 
+            this.lblSinolikiXrewsiOikonomika.AutoSize = true;
+            this.lblSinolikiXrewsiOikonomika.Location = new System.Drawing.Point(20, 295);
+            this.lblSinolikiXrewsiOikonomika.Name = "lblSinolikiXrewsiOikonomika";
+            this.lblSinolikiXrewsiOikonomika.Size = new System.Drawing.Size(119, 13);
+            this.lblSinolikiXrewsiOikonomika.TabIndex = 30;
+            this.lblSinolikiXrewsiOikonomika.Text = "ΣΥΝΟΛΙΚΗ ΧΡΕΩΣΗ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 246);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 13);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "ΗΜΕΡΟΜΗΝΙΑ ΑΝΑΧΩΡΗΣΗΣ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 197);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 13);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "ΗΜΕΡΟΜΗΝΙΑ ΑΦΙΞΗΣ";
+            // 
+            // txtboxHmerominiaAnaxwrisisOikonomika
+            // 
+            this.txtboxHmerominiaAnaxwrisisOikonomika.Location = new System.Drawing.Point(203, 239);
+            this.txtboxHmerominiaAnaxwrisisOikonomika.Name = "txtboxHmerominiaAnaxwrisisOikonomika";
+            this.txtboxHmerominiaAnaxwrisisOikonomika.ReadOnly = true;
+            this.txtboxHmerominiaAnaxwrisisOikonomika.Size = new System.Drawing.Size(182, 20);
+            this.txtboxHmerominiaAnaxwrisisOikonomika.TabIndex = 27;
+            // 
+            // txtboxHmerominaAfixisOikonomika
+            // 
+            this.txtboxHmerominaAfixisOikonomika.Location = new System.Drawing.Point(203, 190);
+            this.txtboxHmerominaAfixisOikonomika.Name = "txtboxHmerominaAfixisOikonomika";
+            this.txtboxHmerominaAfixisOikonomika.ReadOnly = true;
+            this.txtboxHmerominaAfixisOikonomika.Size = new System.Drawing.Size(182, 20);
+            this.txtboxHmerominaAfixisOikonomika.TabIndex = 26;
+            // 
+            // lblArithmosDianikterefsewnOikonomika
+            // 
+            this.lblArithmosDianikterefsewnOikonomika.AutoSize = true;
+            this.lblArithmosDianikterefsewnOikonomika.Location = new System.Drawing.Point(20, 148);
+            this.lblArithmosDianikterefsewnOikonomika.Name = "lblArithmosDianikterefsewnOikonomika";
+            this.lblArithmosDianikterefsewnOikonomika.Size = new System.Drawing.Size(177, 13);
+            this.lblArithmosDianikterefsewnOikonomika.TabIndex = 25;
+            this.lblArithmosDianikterefsewnOikonomika.Text = "ΑΡΙΘΜΟΣ ΔΙΑΝΥΚΤΕΡΕΥΣΕΩΝ";
+            // 
+            // txtboxArithmosDianikterefsewnOikonomika
+            // 
+            this.txtboxArithmosDianikterefsewnOikonomika.Location = new System.Drawing.Point(203, 141);
+            this.txtboxArithmosDianikterefsewnOikonomika.Name = "txtboxArithmosDianikterefsewnOikonomika";
+            this.txtboxArithmosDianikterefsewnOikonomika.ReadOnly = true;
+            this.txtboxArithmosDianikterefsewnOikonomika.Size = new System.Drawing.Size(182, 20);
+            this.txtboxArithmosDianikterefsewnOikonomika.TabIndex = 24;
+            // 
+            // txtboxOnomatepwnimoOikonomika
+            // 
+            this.txtboxOnomatepwnimoOikonomika.Location = new System.Drawing.Point(203, 92);
+            this.txtboxOnomatepwnimoOikonomika.Multiline = true;
+            this.txtboxOnomatepwnimoOikonomika.Name = "txtboxOnomatepwnimoOikonomika";
+            this.txtboxOnomatepwnimoOikonomika.ReadOnly = true;
+            this.txtboxOnomatepwnimoOikonomika.Size = new System.Drawing.Size(182, 20);
+            this.txtboxOnomatepwnimoOikonomika.TabIndex = 23;
+            // 
+            // lblOnomaPelatiOkonomika
+            // 
+            this.lblOnomaPelatiOkonomika.AutoSize = true;
+            this.lblOnomaPelatiOkonomika.Location = new System.Drawing.Point(20, 99);
+            this.lblOnomaPelatiOkonomika.Name = "lblOnomaPelatiOkonomika";
+            this.lblOnomaPelatiOkonomika.Size = new System.Drawing.Size(114, 13);
+            this.lblOnomaPelatiOkonomika.TabIndex = 22;
+            this.lblOnomaPelatiOkonomika.Text = "ΟΝΟΜΑΤΕΠΩΝΥΜΟ";
+            // 
+            // btnSearchTaftotitaOikonomika
+            // 
+            this.btnSearchTaftotitaOikonomika.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchTaftotitaOikonomika.Image")));
+            this.btnSearchTaftotitaOikonomika.Location = new System.Drawing.Point(329, 36);
+            this.btnSearchTaftotitaOikonomika.Name = "btnSearchTaftotitaOikonomika";
+            this.btnSearchTaftotitaOikonomika.Size = new System.Drawing.Size(32, 32);
+            this.btnSearchTaftotitaOikonomika.TabIndex = 21;
+            this.btnSearchTaftotitaOikonomika.UseVisualStyleBackColor = true;
+            this.btnSearchTaftotitaOikonomika.Click += new System.EventHandler(this.btnSearchTaftotitaOikonomika_Click);
+            // 
+            // lblTaftotitaOikonomikaStoixeia
+            // 
+            this.lblTaftotitaOikonomikaStoixeia.AutoSize = true;
+            this.lblTaftotitaOikonomikaStoixeia.Location = new System.Drawing.Point(20, 50);
+            this.lblTaftotitaOikonomikaStoixeia.Name = "lblTaftotitaOikonomikaStoixeia";
+            this.lblTaftotitaOikonomikaStoixeia.Size = new System.Drawing.Size(126, 13);
+            this.lblTaftotitaOikonomikaStoixeia.TabIndex = 1;
+            this.lblTaftotitaOikonomikaStoixeia.Text = "ΤΑΥΤΟΤΗΤΑ ΠΕΛΑΤΗ";
+            // 
+            // txtboxTaftotitaOikonomikaStoixeia
+            // 
+            this.txtboxTaftotitaOikonomikaStoixeia.Location = new System.Drawing.Point(203, 43);
+            this.txtboxTaftotitaOikonomikaStoixeia.Name = "txtboxTaftotitaOikonomikaStoixeia";
+            this.txtboxTaftotitaOikonomikaStoixeia.Size = new System.Drawing.Size(100, 20);
+            this.txtboxTaftotitaOikonomikaStoixeia.TabIndex = 0;
+            // 
             // printDocumentKatastasiDwmatiwn
             // 
-            this.printDocumentKatastasiDwmatiwn.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // btnPrintKatastasiDwmatiwn
-            // 
-            this.btnPrintKatastasiDwmatiwn.Location = new System.Drawing.Point(788, 373);
-            this.btnPrintKatastasiDwmatiwn.Name = "btnPrintKatastasiDwmatiwn";
-            this.btnPrintKatastasiDwmatiwn.Size = new System.Drawing.Size(75, 23);
-            this.btnPrintKatastasiDwmatiwn.TabIndex = 26;
-            this.btnPrintKatastasiDwmatiwn.Text = "ΕΚΤΥΠΩΣΗ";
-            this.btnPrintKatastasiDwmatiwn.UseVisualStyleBackColor = true;
-            this.btnPrintKatastasiDwmatiwn.Click += new System.EventHandler(this.btnPrintKatastasiDwmatiwn_Click);
+            this.printDocumentKatastasiDwmatiwn.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentKatastasiDwmatiwn_PrintPage);
             // 
             // MainWindow
             // 
@@ -1673,6 +1809,8 @@
             this.grpBoxKatastasiDwmatiwn.ResumeLayout(false);
             this.grpBoxKatastasiDwmatiwn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKatastasiDwmatiwn)).EndInit();
+            this.tab_oikonomika_stoixeia.ResumeLayout(false);
+            this.tab_oikonomika_stoixeia.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1705,7 +1843,6 @@
         private System.Windows.Forms.Button btn_add_customer;
         private System.Windows.Forms.Label lbl_grp_ckbox_add_customer;
         private System.Windows.Forms.GroupBox grpbox_edit_customer;
-        private System.Windows.Forms.Button btn_search_customer_add;
         private System.Windows.Forms.Button btn_edit_customer;
         private System.Windows.Forms.Button btn_search_customer_edit;
         private System.Windows.Forms.TextBox txtbox_arithmosodou_edit_customer;
@@ -1827,5 +1964,18 @@
         private System.Windows.Forms.Label lblKatastasiDwmatiwnMonoklinaArithmos;
         private System.Drawing.Printing.PrintDocument printDocumentKatastasiDwmatiwn;
         private System.Windows.Forms.Button btnPrintKatastasiDwmatiwn;
+        private System.Windows.Forms.Label lblSinolikiXrewsiOikonomika;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtboxHmerominiaAnaxwrisisOikonomika;
+        private System.Windows.Forms.TextBox txtboxHmerominaAfixisOikonomika;
+        private System.Windows.Forms.Label lblArithmosDianikterefsewnOikonomika;
+        private System.Windows.Forms.TextBox txtboxArithmosDianikterefsewnOikonomika;
+        private System.Windows.Forms.TextBox txtboxOnomatepwnimoOikonomika;
+        private System.Windows.Forms.Label lblOnomaPelatiOkonomika;
+        private System.Windows.Forms.Button btnSearchTaftotitaOikonomika;
+        private System.Windows.Forms.Label lblTaftotitaOikonomikaStoixeia;
+        private System.Windows.Forms.TextBox txtboxTaftotitaOikonomikaStoixeia;
+        private System.Windows.Forms.TextBox txtboxSunoloXrewsisOikonomika;
     }
 }
