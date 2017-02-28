@@ -19,17 +19,16 @@ namespace telo
         public loginWindow()
         {
             InitializeComponent();
-            MainWindow mW = new MainWindow();
-            mW.Show();
+           
         }
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;");
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_exit_Click(object sender, EventArgs e)
         {
             
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_lgn_Click(object sender, EventArgs e)
         {
 
             
@@ -59,12 +58,12 @@ namespace telo
             
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtbox_username_TextChanged(object sender, EventArgs e)
         {
             this.AcceptButton = btn_lgn;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void txtbox_password_TextChanged(object sender, EventArgs e)
         {
             this.AcceptButton = btn_lgn;
         }

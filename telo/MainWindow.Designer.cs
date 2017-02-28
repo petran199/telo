@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.tabControlKatastasiDwmatiwn = new System.Windows.Forms.TabControl();
             this.tab_customers = new System.Windows.Forms.TabPage();
@@ -189,6 +190,7 @@
             this.lblTaftotitaOikonomikaStoixeia = new System.Windows.Forms.Label();
             this.txtboxTaftotitaOikonomikaStoixeia = new System.Windows.Forms.TextBox();
             this.printDocumentKatastasiDwmatiwn = new System.Drawing.Printing.PrintDocument();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControlKatastasiDwmatiwn.SuspendLayout();
             this.tab_customers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_pelates)).BeginInit();
@@ -217,12 +219,14 @@
             this.tabControlKatastasiDwmatiwn.Location = new System.Drawing.Point(0, 0);
             this.tabControlKatastasiDwmatiwn.Name = "tabControlKatastasiDwmatiwn";
             this.tabControlKatastasiDwmatiwn.SelectedIndex = 0;
-            this.tabControlKatastasiDwmatiwn.Size = new System.Drawing.Size(1268, 730);
+            this.tabControlKatastasiDwmatiwn.Size = new System.Drawing.Size(1366, 768);
             this.tabControlKatastasiDwmatiwn.TabIndex = 0;
             this.tabControlKatastasiDwmatiwn.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlKatastasiDwmatiwn_Selected);
             // 
             // tab_customers
             // 
+            this.tab_customers.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_customers.BackgroundImage")));
+            this.tab_customers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab_customers.Controls.Add(this.dataGridView_pelates);
             this.tab_customers.Controls.Add(this.grpbox_delete_customer);
             this.tab_customers.Controls.Add(this.grpbox_edit_customer);
@@ -230,7 +234,7 @@
             this.tab_customers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.tab_customers.Location = new System.Drawing.Point(4, 22);
             this.tab_customers.Name = "tab_customers";
-            this.tab_customers.Size = new System.Drawing.Size(1260, 704);
+            this.tab_customers.Size = new System.Drawing.Size(1358, 742);
             this.tab_customers.TabIndex = 4;
             this.tab_customers.Text = "ΔΙΑΧΕΙΡΗΣΗ ΠΕΛΑΤΩΝ";
             this.tab_customers.UseVisualStyleBackColor = true;
@@ -242,8 +246,9 @@
             this.dataGridView_pelates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_pelates.Location = new System.Drawing.Point(265, 436);
             this.dataGridView_pelates.Name = "dataGridView_pelates";
+            this.dataGridView_pelates.ReadOnly = true;
             this.dataGridView_pelates.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_pelates.Size = new System.Drawing.Size(859, 223);
+            this.dataGridView_pelates.Size = new System.Drawing.Size(847, 139);
             this.dataGridView_pelates.TabIndex = 20;
             // 
             // grpbox_delete_customer
@@ -272,6 +277,7 @@
             this.grpbox_delete_customer.Controls.Add(this.lbl_city_delete_customer);
             this.grpbox_delete_customer.Controls.Add(this.lbl_country_delete_customer);
             this.grpbox_delete_customer.Controls.Add(this.lbl_tel_delete_customer);
+            this.grpbox_delete_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.grpbox_delete_customer.Location = new System.Drawing.Point(817, 3);
             this.grpbox_delete_customer.Name = "grpbox_delete_customer";
             this.grpbox_delete_customer.Size = new System.Drawing.Size(361, 414);
@@ -286,6 +292,7 @@
             this.btn_clear_customer_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_clear_customer_delete.TabIndex = 45;
             this.btn_clear_customer_delete.Text = "CLEAR";
+            this.toolTip1.SetToolTip(this.btn_clear_customer_delete, "ΚΑΘΑΡΙΣΜΟΣ ΠΕΔΙΩΝ");
             this.btn_clear_customer_delete.UseVisualStyleBackColor = true;
             this.btn_clear_customer_delete.Click += new System.EventHandler(this.btn_clear_customer_delete_Click);
             // 
@@ -302,7 +309,7 @@
             this.lbl_idPelati_delete_customer.AutoSize = true;
             this.lbl_idPelati_delete_customer.Location = new System.Drawing.Point(243, 39);
             this.lbl_idPelati_delete_customer.Name = "lbl_idPelati_delete_customer";
-            this.lbl_idPelati_delete_customer.Size = new System.Drawing.Size(18, 13);
+            this.lbl_idPelati_delete_customer.Size = new System.Drawing.Size(20, 13);
             this.lbl_idPelati_delete_customer.TabIndex = 42;
             this.lbl_idPelati_delete_customer.Text = "ID";
             // 
@@ -317,9 +324,10 @@
             // 
             this.btn_delete_customer.Location = new System.Drawing.Point(267, 360);
             this.btn_delete_customer.Name = "btn_delete_customer";
-            this.btn_delete_customer.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete_customer.Size = new System.Drawing.Size(88, 23);
             this.btn_delete_customer.TabIndex = 39;
             this.btn_delete_customer.Text = "ΔΙΑΓΡΑΦΗ";
+            this.toolTip1.SetToolTip(this.btn_delete_customer, "ΔΙΑΓΡΑΦΗ ΠΕΔΙΩΝ ΑΠΟ ΤΟ ΣΥΣΤΗΜΑ");
             this.btn_delete_customer.UseVisualStyleBackColor = true;
             this.btn_delete_customer.Click += new System.EventHandler(this.btn_delete_customer_Click);
             // 
@@ -330,6 +338,7 @@
             this.btn_search_customer_delete.Name = "btn_search_customer_delete";
             this.btn_search_customer_delete.Size = new System.Drawing.Size(32, 32);
             this.btn_search_customer_delete.TabIndex = 38;
+            this.toolTip1.SetToolTip(this.btn_search_customer_delete, "ΕΝΤΟΠΙΣΜΟΣ ΠΕΛΑΤΗ ΜΕ ΤΑΥΤΟΤΗΤΑ Ή ID");
             this.btn_search_customer_delete.UseVisualStyleBackColor = true;
             this.btn_search_customer_delete.Click += new System.EventHandler(this.btn_search_customer_delete_Click);
             // 
@@ -404,7 +413,7 @@
             this.lbl_grp_ckbox_delete_customer.AutoSize = true;
             this.lbl_grp_ckbox_delete_customer.Location = new System.Drawing.Point(21, 209);
             this.lbl_grp_ckbox_delete_customer.Name = "lbl_grp_ckbox_delete_customer";
-            this.lbl_grp_ckbox_delete_customer.Size = new System.Drawing.Size(48, 13);
+            this.lbl_grp_ckbox_delete_customer.Size = new System.Drawing.Size(54, 13);
             this.lbl_grp_ckbox_delete_customer.TabIndex = 27;
             this.lbl_grp_ckbox_delete_customer.Text = "ΓΚΡΟΥΠ";
             // 
@@ -413,7 +422,7 @@
             this.lbl_lname_delete_customer.AutoSize = true;
             this.lbl_lname_delete_customer.Location = new System.Drawing.Point(21, 36);
             this.lbl_lname_delete_customer.Name = "lbl_lname_delete_customer";
-            this.lbl_lname_delete_customer.Size = new System.Drawing.Size(59, 13);
+            this.lbl_lname_delete_customer.Size = new System.Drawing.Size(66, 13);
             this.lbl_lname_delete_customer.TabIndex = 19;
             this.lbl_lname_delete_customer.Text = "ΕΠΩΝΥΜΟ";
             // 
@@ -422,7 +431,7 @@
             this.lbl_fname_delete_customer.AutoSize = true;
             this.lbl_fname_delete_customer.Location = new System.Drawing.Point(21, 67);
             this.lbl_fname_delete_customer.Name = "lbl_fname_delete_customer";
-            this.lbl_fname_delete_customer.Size = new System.Drawing.Size(43, 13);
+            this.lbl_fname_delete_customer.Size = new System.Drawing.Size(48, 13);
             this.lbl_fname_delete_customer.TabIndex = 20;
             this.lbl_fname_delete_customer.Text = "ΟΝΟΜΑ";
             // 
@@ -431,7 +440,7 @@
             this.lbl_taftotita_delete_customer.AutoSize = true;
             this.lbl_taftotita_delete_customer.Location = new System.Drawing.Point(21, 106);
             this.lbl_taftotita_delete_customer.Name = "lbl_taftotita_delete_customer";
-            this.lbl_taftotita_delete_customer.Size = new System.Drawing.Size(67, 13);
+            this.lbl_taftotita_delete_customer.Size = new System.Drawing.Size(76, 13);
             this.lbl_taftotita_delete_customer.TabIndex = 21;
             this.lbl_taftotita_delete_customer.Text = "ΤΑΥΤΟΤΗΤΑ";
             // 
@@ -440,7 +449,7 @@
             this.lbl_afm_delete_customer.AutoSize = true;
             this.lbl_afm_delete_customer.Location = new System.Drawing.Point(21, 141);
             this.lbl_afm_delete_customer.Name = "lbl_afm_delete_customer";
-            this.lbl_afm_delete_customer.Size = new System.Drawing.Size(32, 13);
+            this.lbl_afm_delete_customer.Size = new System.Drawing.Size(35, 13);
             this.lbl_afm_delete_customer.TabIndex = 22;
             this.lbl_afm_delete_customer.Text = "ΑΦΜ";
             // 
@@ -449,7 +458,7 @@
             this.lbl_odos_arithmos_delete_customer.AutoSize = true;
             this.lbl_odos_arithmos_delete_customer.Location = new System.Drawing.Point(20, 310);
             this.lbl_odos_arithmos_delete_customer.Name = "lbl_odos_arithmos_delete_customer";
-            this.lbl_odos_arithmos_delete_customer.Size = new System.Drawing.Size(83, 13);
+            this.lbl_odos_arithmos_delete_customer.Size = new System.Drawing.Size(95, 13);
             this.lbl_odos_arithmos_delete_customer.TabIndex = 26;
             this.lbl_odos_arithmos_delete_customer.Text = "ΟΔΟΣ-ΑΡΙΘΜΟΣ";
             // 
@@ -458,7 +467,7 @@
             this.lbl_city_delete_customer.AutoSize = true;
             this.lbl_city_delete_customer.Location = new System.Drawing.Point(20, 279);
             this.lbl_city_delete_customer.Name = "lbl_city_delete_customer";
-            this.lbl_city_delete_customer.Size = new System.Drawing.Size(35, 13);
+            this.lbl_city_delete_customer.Size = new System.Drawing.Size(39, 13);
             this.lbl_city_delete_customer.TabIndex = 25;
             this.lbl_city_delete_customer.Text = "ΠΟΛΗ";
             // 
@@ -467,7 +476,7 @@
             this.lbl_country_delete_customer.AutoSize = true;
             this.lbl_country_delete_customer.Location = new System.Drawing.Point(20, 241);
             this.lbl_country_delete_customer.Name = "lbl_country_delete_customer";
-            this.lbl_country_delete_customer.Size = new System.Drawing.Size(37, 13);
+            this.lbl_country_delete_customer.Size = new System.Drawing.Size(41, 13);
             this.lbl_country_delete_customer.TabIndex = 24;
             this.lbl_country_delete_customer.Text = "ΧΩΡΑ";
             // 
@@ -476,7 +485,7 @@
             this.lbl_tel_delete_customer.AutoSize = true;
             this.lbl_tel_delete_customer.Location = new System.Drawing.Point(21, 172);
             this.lbl_tel_delete_customer.Name = "lbl_tel_delete_customer";
-            this.lbl_tel_delete_customer.Size = new System.Drawing.Size(66, 13);
+            this.lbl_tel_delete_customer.Size = new System.Drawing.Size(74, 13);
             this.lbl_tel_delete_customer.TabIndex = 23;
             this.lbl_tel_delete_customer.Text = "ΤΗΛΕΦΩΝΟ";
             // 
@@ -506,6 +515,7 @@
             this.grpbox_edit_customer.Controls.Add(this.lbl_city_edit_customer);
             this.grpbox_edit_customer.Controls.Add(this.lbl_country_edit_customer);
             this.grpbox_edit_customer.Controls.Add(this.lbl_tel_edit_customer);
+            this.grpbox_edit_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.grpbox_edit_customer.Location = new System.Drawing.Point(429, 3);
             this.grpbox_edit_customer.Name = "grpbox_edit_customer";
             this.grpbox_edit_customer.Size = new System.Drawing.Size(361, 414);
@@ -520,6 +530,7 @@
             this.btn_clear_customer_edit.Size = new System.Drawing.Size(75, 23);
             this.btn_clear_customer_edit.TabIndex = 44;
             this.btn_clear_customer_edit.Text = "CLEAR";
+            this.toolTip1.SetToolTip(this.btn_clear_customer_edit, "ΚΑΘΑΡΙΣΜΟΣ ΠΕΔΙΩΝ");
             this.btn_clear_customer_edit.UseVisualStyleBackColor = true;
             this.btn_clear_customer_edit.Click += new System.EventHandler(this.btn_clear_customer_edit_Click);
             // 
@@ -536,7 +547,7 @@
             this.lbl_idPelati_edit_customer.AutoSize = true;
             this.lbl_idPelati_edit_customer.Location = new System.Drawing.Point(230, 39);
             this.lbl_idPelati_edit_customer.Name = "lbl_idPelati_edit_customer";
-            this.lbl_idPelati_edit_customer.Size = new System.Drawing.Size(18, 13);
+            this.lbl_idPelati_edit_customer.Size = new System.Drawing.Size(20, 13);
             this.lbl_idPelati_edit_customer.TabIndex = 41;
             this.lbl_idPelati_edit_customer.Text = "ID";
             // 
@@ -555,6 +566,7 @@
             this.btn_edit_customer.Size = new System.Drawing.Size(88, 23);
             this.btn_edit_customer.TabIndex = 39;
             this.btn_edit_customer.Text = "ΕΝΗΜΕΡΩΣΗ";
+            this.toolTip1.SetToolTip(this.btn_edit_customer, "ΕΝΗΜΕΡΩΣΗ ΠΕΔΙΩΝ ΣΤΟ ΣΥΣΤΜΑ");
             this.btn_edit_customer.UseVisualStyleBackColor = true;
             this.btn_edit_customer.Click += new System.EventHandler(this.btn_edit_customer_Click);
             // 
@@ -565,6 +577,7 @@
             this.btn_search_customer_edit.Name = "btn_search_customer_edit";
             this.btn_search_customer_edit.Size = new System.Drawing.Size(32, 32);
             this.btn_search_customer_edit.TabIndex = 38;
+            this.toolTip1.SetToolTip(this.btn_search_customer_edit, "ΕΝΤΟΠΙΣΜΟΣ ΠΕΛΑΤΗ ΜΕ ΤΑΥΤΟΤΗΤΑ Ή ID");
             this.btn_search_customer_edit.UseVisualStyleBackColor = true;
             this.btn_search_customer_edit.Click += new System.EventHandler(this.btn_search_customer_edit_Click);
             // 
@@ -639,7 +652,7 @@
             this.lbl_grp_ckbox_edit_customer.AutoSize = true;
             this.lbl_grp_ckbox_edit_customer.Location = new System.Drawing.Point(21, 209);
             this.lbl_grp_ckbox_edit_customer.Name = "lbl_grp_ckbox_edit_customer";
-            this.lbl_grp_ckbox_edit_customer.Size = new System.Drawing.Size(48, 13);
+            this.lbl_grp_ckbox_edit_customer.Size = new System.Drawing.Size(54, 13);
             this.lbl_grp_ckbox_edit_customer.TabIndex = 27;
             this.lbl_grp_ckbox_edit_customer.Text = "ΓΚΡΟΥΠ";
             // 
@@ -648,7 +661,7 @@
             this.lbl_lname_edit_customer.AutoSize = true;
             this.lbl_lname_edit_customer.Location = new System.Drawing.Point(21, 36);
             this.lbl_lname_edit_customer.Name = "lbl_lname_edit_customer";
-            this.lbl_lname_edit_customer.Size = new System.Drawing.Size(59, 13);
+            this.lbl_lname_edit_customer.Size = new System.Drawing.Size(66, 13);
             this.lbl_lname_edit_customer.TabIndex = 19;
             this.lbl_lname_edit_customer.Text = "ΕΠΩΝΥΜΟ";
             // 
@@ -657,7 +670,7 @@
             this.lbl_fname_edit_customer.AutoSize = true;
             this.lbl_fname_edit_customer.Location = new System.Drawing.Point(21, 67);
             this.lbl_fname_edit_customer.Name = "lbl_fname_edit_customer";
-            this.lbl_fname_edit_customer.Size = new System.Drawing.Size(43, 13);
+            this.lbl_fname_edit_customer.Size = new System.Drawing.Size(48, 13);
             this.lbl_fname_edit_customer.TabIndex = 20;
             this.lbl_fname_edit_customer.Text = "ΟΝΟΜΑ";
             // 
@@ -666,7 +679,7 @@
             this.lbl_taftotita_edit_customer.AutoSize = true;
             this.lbl_taftotita_edit_customer.Location = new System.Drawing.Point(21, 106);
             this.lbl_taftotita_edit_customer.Name = "lbl_taftotita_edit_customer";
-            this.lbl_taftotita_edit_customer.Size = new System.Drawing.Size(67, 13);
+            this.lbl_taftotita_edit_customer.Size = new System.Drawing.Size(76, 13);
             this.lbl_taftotita_edit_customer.TabIndex = 21;
             this.lbl_taftotita_edit_customer.Text = "ΤΑΥΤΟΤΗΤΑ";
             // 
@@ -675,7 +688,7 @@
             this.lbl_afm_edit_customer.AutoSize = true;
             this.lbl_afm_edit_customer.Location = new System.Drawing.Point(21, 141);
             this.lbl_afm_edit_customer.Name = "lbl_afm_edit_customer";
-            this.lbl_afm_edit_customer.Size = new System.Drawing.Size(32, 13);
+            this.lbl_afm_edit_customer.Size = new System.Drawing.Size(35, 13);
             this.lbl_afm_edit_customer.TabIndex = 22;
             this.lbl_afm_edit_customer.Text = "ΑΦΜ";
             // 
@@ -684,7 +697,7 @@
             this.lbl_odos_arithmos_edit_customer.AutoSize = true;
             this.lbl_odos_arithmos_edit_customer.Location = new System.Drawing.Point(20, 310);
             this.lbl_odos_arithmos_edit_customer.Name = "lbl_odos_arithmos_edit_customer";
-            this.lbl_odos_arithmos_edit_customer.Size = new System.Drawing.Size(83, 13);
+            this.lbl_odos_arithmos_edit_customer.Size = new System.Drawing.Size(95, 13);
             this.lbl_odos_arithmos_edit_customer.TabIndex = 26;
             this.lbl_odos_arithmos_edit_customer.Text = "ΟΔΟΣ-ΑΡΙΘΜΟΣ";
             // 
@@ -693,7 +706,7 @@
             this.lbl_city_edit_customer.AutoSize = true;
             this.lbl_city_edit_customer.Location = new System.Drawing.Point(20, 279);
             this.lbl_city_edit_customer.Name = "lbl_city_edit_customer";
-            this.lbl_city_edit_customer.Size = new System.Drawing.Size(35, 13);
+            this.lbl_city_edit_customer.Size = new System.Drawing.Size(39, 13);
             this.lbl_city_edit_customer.TabIndex = 25;
             this.lbl_city_edit_customer.Text = "ΠΟΛΗ";
             // 
@@ -702,7 +715,7 @@
             this.lbl_country_edit_customer.AutoSize = true;
             this.lbl_country_edit_customer.Location = new System.Drawing.Point(20, 241);
             this.lbl_country_edit_customer.Name = "lbl_country_edit_customer";
-            this.lbl_country_edit_customer.Size = new System.Drawing.Size(37, 13);
+            this.lbl_country_edit_customer.Size = new System.Drawing.Size(41, 13);
             this.lbl_country_edit_customer.TabIndex = 24;
             this.lbl_country_edit_customer.Text = "ΧΩΡΑ";
             // 
@@ -711,7 +724,7 @@
             this.lbl_tel_edit_customer.AutoSize = true;
             this.lbl_tel_edit_customer.Location = new System.Drawing.Point(21, 172);
             this.lbl_tel_edit_customer.Name = "lbl_tel_edit_customer";
-            this.lbl_tel_edit_customer.Size = new System.Drawing.Size(66, 13);
+            this.lbl_tel_edit_customer.Size = new System.Drawing.Size(74, 13);
             this.lbl_tel_edit_customer.TabIndex = 23;
             this.lbl_tel_edit_customer.Text = "ΤΗΛΕΦΩΝΟ";
             // 
@@ -738,6 +751,7 @@
             this.grpbox_add_customer.Controls.Add(this.txtbox_taftotita_add_customer);
             this.grpbox_add_customer.Controls.Add(this.lbl_country_add_customer);
             this.grpbox_add_customer.Controls.Add(this.lbl_tel_add_customer);
+            this.grpbox_add_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.grpbox_add_customer.Location = new System.Drawing.Point(3, 3);
             this.grpbox_add_customer.Name = "grpbox_add_customer";
             this.grpbox_add_customer.Size = new System.Drawing.Size(399, 414);
@@ -752,6 +766,7 @@
             this.btn_clear_customer_add.Size = new System.Drawing.Size(75, 23);
             this.btn_clear_customer_add.TabIndex = 45;
             this.btn_clear_customer_add.Text = "CLEAR";
+            this.toolTip1.SetToolTip(this.btn_clear_customer_add, "Καθαρισμός πεδίων");
             this.btn_clear_customer_add.UseVisualStyleBackColor = true;
             this.btn_clear_customer_add.Click += new System.EventHandler(this.btn_clear_customer_add_Click);
             // 
@@ -767,9 +782,10 @@
             // 
             this.btn_add_customer.Location = new System.Drawing.Point(315, 360);
             this.btn_add_customer.Name = "btn_add_customer";
-            this.btn_add_customer.Size = new System.Drawing.Size(75, 23);
+            this.btn_add_customer.Size = new System.Drawing.Size(78, 23);
             this.btn_add_customer.TabIndex = 19;
             this.btn_add_customer.Text = "ΠΡΟΣΘΗΚΗ";
+            this.toolTip1.SetToolTip(this.btn_add_customer, "ΠΡΟΣΘΗΚΗ ΠΕΛΑΤΗ ΣΤΟ ΣΥΣΤΗΜΑ");
             this.btn_add_customer.UseVisualStyleBackColor = true;
             this.btn_add_customer.Click += new System.EventHandler(this.btn_add_customer_Click);
             // 
@@ -778,7 +794,7 @@
             this.lbl_grp_ckbox_add_customer.AutoSize = true;
             this.lbl_grp_ckbox_add_customer.Location = new System.Drawing.Point(31, 211);
             this.lbl_grp_ckbox_add_customer.Name = "lbl_grp_ckbox_add_customer";
-            this.lbl_grp_ckbox_add_customer.Size = new System.Drawing.Size(48, 13);
+            this.lbl_grp_ckbox_add_customer.Size = new System.Drawing.Size(54, 13);
             this.lbl_grp_ckbox_add_customer.TabIndex = 18;
             this.lbl_grp_ckbox_add_customer.Text = "ΓΚΡΟΥΠ";
             // 
@@ -787,7 +803,7 @@
             this.lbl_lname_add_customer.AutoSize = true;
             this.lbl_lname_add_customer.Location = new System.Drawing.Point(31, 38);
             this.lbl_lname_add_customer.Name = "lbl_lname_add_customer";
-            this.lbl_lname_add_customer.Size = new System.Drawing.Size(59, 13);
+            this.lbl_lname_add_customer.Size = new System.Drawing.Size(66, 13);
             this.lbl_lname_add_customer.TabIndex = 0;
             this.lbl_lname_add_customer.Text = "ΕΠΩΝΥΜΟ";
             // 
@@ -804,7 +820,7 @@
             this.lbl_fname_add_customer.AutoSize = true;
             this.lbl_fname_add_customer.Location = new System.Drawing.Point(31, 69);
             this.lbl_fname_add_customer.Name = "lbl_fname_add_customer";
-            this.lbl_fname_add_customer.Size = new System.Drawing.Size(43, 13);
+            this.lbl_fname_add_customer.Size = new System.Drawing.Size(48, 13);
             this.lbl_fname_add_customer.TabIndex = 1;
             this.lbl_fname_add_customer.Text = "ΟΝΟΜΑ";
             // 
@@ -821,7 +837,7 @@
             this.lbl_taftotita_add_customer.AutoSize = true;
             this.lbl_taftotita_add_customer.Location = new System.Drawing.Point(31, 108);
             this.lbl_taftotita_add_customer.Name = "lbl_taftotita_add_customer";
-            this.lbl_taftotita_add_customer.Size = new System.Drawing.Size(67, 13);
+            this.lbl_taftotita_add_customer.Size = new System.Drawing.Size(76, 13);
             this.lbl_taftotita_add_customer.TabIndex = 2;
             this.lbl_taftotita_add_customer.Text = "ΤΑΥΤΟΤΗΤΑ";
             // 
@@ -838,7 +854,7 @@
             this.lbl_afm_add_customer.AutoSize = true;
             this.lbl_afm_add_customer.Location = new System.Drawing.Point(31, 143);
             this.lbl_afm_add_customer.Name = "lbl_afm_add_customer";
-            this.lbl_afm_add_customer.Size = new System.Drawing.Size(32, 13);
+            this.lbl_afm_add_customer.Size = new System.Drawing.Size(35, 13);
             this.lbl_afm_add_customer.TabIndex = 3;
             this.lbl_afm_add_customer.Text = "ΑΦΜ";
             // 
@@ -879,7 +895,7 @@
             this.lbl_odos_arithmos_add_customer.AutoSize = true;
             this.lbl_odos_arithmos_add_customer.Location = new System.Drawing.Point(30, 312);
             this.lbl_odos_arithmos_add_customer.Name = "lbl_odos_arithmos_add_customer";
-            this.lbl_odos_arithmos_add_customer.Size = new System.Drawing.Size(83, 13);
+            this.lbl_odos_arithmos_add_customer.Size = new System.Drawing.Size(95, 13);
             this.lbl_odos_arithmos_add_customer.TabIndex = 7;
             this.lbl_odos_arithmos_add_customer.Text = "ΟΔΟΣ-ΑΡΙΘΜΟΣ";
             // 
@@ -896,7 +912,7 @@
             this.lbl_city_add_customer.AutoSize = true;
             this.lbl_city_add_customer.Location = new System.Drawing.Point(30, 281);
             this.lbl_city_add_customer.Name = "lbl_city_add_customer";
-            this.lbl_city_add_customer.Size = new System.Drawing.Size(35, 13);
+            this.lbl_city_add_customer.Size = new System.Drawing.Size(39, 13);
             this.lbl_city_add_customer.TabIndex = 6;
             this.lbl_city_add_customer.Text = "ΠΟΛΗ";
             // 
@@ -912,7 +928,7 @@
             this.lbl_country_add_customer.AutoSize = true;
             this.lbl_country_add_customer.Location = new System.Drawing.Point(30, 243);
             this.lbl_country_add_customer.Name = "lbl_country_add_customer";
-            this.lbl_country_add_customer.Size = new System.Drawing.Size(37, 13);
+            this.lbl_country_add_customer.Size = new System.Drawing.Size(41, 13);
             this.lbl_country_add_customer.TabIndex = 5;
             this.lbl_country_add_customer.Text = "ΧΩΡΑ";
             // 
@@ -921,12 +937,13 @@
             this.lbl_tel_add_customer.AutoSize = true;
             this.lbl_tel_add_customer.Location = new System.Drawing.Point(31, 174);
             this.lbl_tel_add_customer.Name = "lbl_tel_add_customer";
-            this.lbl_tel_add_customer.Size = new System.Drawing.Size(66, 13);
+            this.lbl_tel_add_customer.Size = new System.Drawing.Size(74, 13);
             this.lbl_tel_add_customer.TabIndex = 4;
             this.lbl_tel_add_customer.Text = "ΤΗΛΕΦΩΝΟ";
             // 
             // tab_kratiseis
             // 
+            this.tab_kratiseis.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_kratiseis.BackgroundImage")));
             this.tab_kratiseis.Controls.Add(this.dataGridView_kratisi);
             this.tab_kratiseis.Controls.Add(this.grpbox_delete_kratisi);
             this.tab_kratiseis.Controls.Add(this.grpbox_edit_kratisi);
@@ -935,7 +952,7 @@
             this.tab_kratiseis.Location = new System.Drawing.Point(4, 22);
             this.tab_kratiseis.Name = "tab_kratiseis";
             this.tab_kratiseis.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_kratiseis.Size = new System.Drawing.Size(1260, 704);
+            this.tab_kratiseis.Size = new System.Drawing.Size(1358, 742);
             this.tab_kratiseis.TabIndex = 1;
             this.tab_kratiseis.Text = "ΔΙΑΧΕΙΡΗΣΗ ΚΡΑΤΗΣΕΩΝ";
             this.tab_kratiseis.UseVisualStyleBackColor = true;
@@ -947,6 +964,7 @@
             this.dataGridView_kratisi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_kratisi.Location = new System.Drawing.Point(91, 453);
             this.dataGridView_kratisi.Name = "dataGridView_kratisi";
+            this.dataGridView_kratisi.ReadOnly = true;
             this.dataGridView_kratisi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_kratisi.Size = new System.Drawing.Size(1163, 221);
             this.dataGridView_kratisi.TabIndex = 22;
@@ -960,7 +978,7 @@
             this.grpbox_delete_kratisi.Controls.Add(this.lbl_idKratisis_delete_kratisi);
             this.grpbox_delete_kratisi.Controls.Add(this.btn_search_deleteKratisi);
             this.grpbox_delete_kratisi.Controls.Add(this.btn_delete_kratisi);
-            this.grpbox_delete_kratisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.grpbox_delete_kratisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.grpbox_delete_kratisi.Location = new System.Drawing.Point(836, 6);
             this.grpbox_delete_kratisi.Name = "grpbox_delete_kratisi";
             this.grpbox_delete_kratisi.Size = new System.Drawing.Size(403, 414);
@@ -970,7 +988,7 @@
             // 
             // btn_clear_delete_kratisi
             // 
-            this.btn_clear_delete_kratisi.Location = new System.Drawing.Point(241, 385);
+            this.btn_clear_delete_kratisi.Location = new System.Drawing.Point(232, 385);
             this.btn_clear_delete_kratisi.Name = "btn_clear_delete_kratisi";
             this.btn_clear_delete_kratisi.Size = new System.Drawing.Size(75, 23);
             this.btn_clear_delete_kratisi.TabIndex = 47;
@@ -983,7 +1001,7 @@
             this.lbl_taftotitta_delete_kratisi.AutoSize = true;
             this.lbl_taftotitta_delete_kratisi.Location = new System.Drawing.Point(6, 79);
             this.lbl_taftotitta_delete_kratisi.Name = "lbl_taftotitta_delete_kratisi";
-            this.lbl_taftotitta_delete_kratisi.Size = new System.Drawing.Size(110, 13);
+            this.lbl_taftotitta_delete_kratisi.Size = new System.Drawing.Size(126, 13);
             this.lbl_taftotitta_delete_kratisi.TabIndex = 45;
             this.lbl_taftotitta_delete_kratisi.Text = "ΤΑΥΤΟΤΗΤΑ ΠΕΛΑΤΗ";
             // 
@@ -1007,7 +1025,7 @@
             this.lbl_idKratisis_delete_kratisi.AutoSize = true;
             this.lbl_idKratisis_delete_kratisi.Location = new System.Drawing.Point(6, 38);
             this.lbl_idKratisis_delete_kratisi.Name = "lbl_idKratisis_delete_kratisi";
-            this.lbl_idKratisis_delete_kratisi.Size = new System.Drawing.Size(75, 13);
+            this.lbl_idKratisis_delete_kratisi.Size = new System.Drawing.Size(86, 13);
             this.lbl_idKratisis_delete_kratisi.TabIndex = 43;
             this.lbl_idKratisis_delete_kratisi.Text = "ID ΚΡΑΤΗΣΗΣ";
             // 
@@ -1018,14 +1036,15 @@
             this.btn_search_deleteKratisi.Name = "btn_search_deleteKratisi";
             this.btn_search_deleteKratisi.Size = new System.Drawing.Size(32, 32);
             this.btn_search_deleteKratisi.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.btn_search_deleteKratisi, "ΑΝΑΖΗΤΗΣΗ ΚΡΑΤΗΣΗΣ ΜΕ ΤΑΥΤΟΤΗΤΑ Ή ID ΚΡΑΤΗΣΗΣ");
             this.btn_search_deleteKratisi.UseVisualStyleBackColor = true;
             this.btn_search_deleteKratisi.Click += new System.EventHandler(this.btn_search_deleteKratisi_Click);
             // 
             // btn_delete_kratisi
             // 
-            this.btn_delete_kratisi.Location = new System.Drawing.Point(322, 385);
+            this.btn_delete_kratisi.Location = new System.Drawing.Point(313, 385);
             this.btn_delete_kratisi.Name = "btn_delete_kratisi";
-            this.btn_delete_kratisi.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete_kratisi.Size = new System.Drawing.Size(84, 23);
             this.btn_delete_kratisi.TabIndex = 19;
             this.btn_delete_kratisi.Text = "ΔΙΑΓΡΑΦΗ";
             this.btn_delete_kratisi.UseVisualStyleBackColor = true;
@@ -1058,7 +1077,7 @@
             this.grpbox_edit_kratisi.Controls.Add(this.lbl_taftotitta_edit_kratisi);
             this.grpbox_edit_kratisi.Controls.Add(this.txtbox_idPelati_editKratisi);
             this.grpbox_edit_kratisi.Controls.Add(this.txtbox_taftotitaPelati_editKratisi);
-            this.grpbox_edit_kratisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.grpbox_edit_kratisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.grpbox_edit_kratisi.Location = new System.Drawing.Point(422, 6);
             this.grpbox_edit_kratisi.Name = "grpbox_edit_kratisi";
             this.grpbox_edit_kratisi.Size = new System.Drawing.Size(399, 414);
@@ -1073,6 +1092,7 @@
             this.btn_clear_edit_kratisi.Size = new System.Drawing.Size(75, 23);
             this.btn_clear_edit_kratisi.TabIndex = 48;
             this.btn_clear_edit_kratisi.Text = "CLEAR";
+            this.toolTip1.SetToolTip(this.btn_clear_edit_kratisi, "ΚΑΘΑΡΙΣΜΟΣ ΠΕΔΙΩΝ ΚΡΑΤΗΣΗΣ");
             this.btn_clear_edit_kratisi.UseVisualStyleBackColor = true;
             this.btn_clear_edit_kratisi.Click += new System.EventHandler(this.btn_clear_edit_kratisi_Click);
             // 
@@ -1151,7 +1171,7 @@
             this.lbl_group_edit_kratisi.AutoSize = true;
             this.lbl_group_edit_kratisi.Location = new System.Drawing.Point(22, 332);
             this.lbl_group_edit_kratisi.Name = "lbl_group_edit_kratisi";
-            this.lbl_group_edit_kratisi.Size = new System.Drawing.Size(48, 13);
+            this.lbl_group_edit_kratisi.Size = new System.Drawing.Size(54, 13);
             this.lbl_group_edit_kratisi.TabIndex = 28;
             this.lbl_group_edit_kratisi.Text = "ΓΚΡΟΥΠ";
             // 
@@ -1160,7 +1180,7 @@
             this.lbl_idKratisis_edit_kratisi.AutoSize = true;
             this.lbl_idKratisis_edit_kratisi.Location = new System.Drawing.Point(22, 68);
             this.lbl_idKratisis_edit_kratisi.Name = "lbl_idKratisis_edit_kratisi";
-            this.lbl_idKratisis_edit_kratisi.Size = new System.Drawing.Size(75, 13);
+            this.lbl_idKratisis_edit_kratisi.Size = new System.Drawing.Size(86, 13);
             this.lbl_idKratisis_edit_kratisi.TabIndex = 42;
             this.lbl_idKratisis_edit_kratisi.Text = "ID ΚΡΑΤΗΣΗΣ";
             // 
@@ -1169,7 +1189,7 @@
             this.lbl_exoflisiKratisis_edit_kratisi.AutoSize = true;
             this.lbl_exoflisiKratisis_edit_kratisi.Location = new System.Drawing.Point(22, 363);
             this.lbl_exoflisiKratisis_edit_kratisi.Name = "lbl_exoflisiKratisis_edit_kratisi";
-            this.lbl_exoflisiKratisis_edit_kratisi.Size = new System.Drawing.Size(122, 13);
+            this.lbl_exoflisiKratisis_edit_kratisi.Size = new System.Drawing.Size(139, 13);
             this.lbl_exoflisiKratisis_edit_kratisi.TabIndex = 21;
             this.lbl_exoflisiKratisis_edit_kratisi.Text = "ΕΞΟΦΛΗΣΗ ΚΡΑΤΗΣΗΣ";
             // 
@@ -1186,7 +1206,7 @@
             this.lbl_troposPliromis_editKratisi.AutoSize = true;
             this.lbl_troposPliromis_editKratisi.Location = new System.Drawing.Point(22, 299);
             this.lbl_troposPliromis_editKratisi.Name = "lbl_troposPliromis_editKratisi";
-            this.lbl_troposPliromis_editKratisi.Size = new System.Drawing.Size(110, 13);
+            this.lbl_troposPliromis_editKratisi.Size = new System.Drawing.Size(125, 13);
             this.lbl_troposPliromis_editKratisi.TabIndex = 22;
             this.lbl_troposPliromis_editKratisi.Text = "ΤΡΟΠΟΣ ΠΛΗΡΩΜΗΣ";
             // 
@@ -1197,6 +1217,7 @@
             this.btn_search_editKratisi.Name = "btn_search_editKratisi";
             this.btn_search_editKratisi.Size = new System.Drawing.Size(32, 32);
             this.btn_search_editKratisi.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.btn_search_editKratisi, "ΑΝΑΖΗΤΗΣΗ ΚΡΑΤΗΣΗΣ ΜΕ ID ΠΕΛΑΤΗ Ή ID ΚΡΑΤΗΣΗΣ Ή ΤΑΥΤΟΤΗΤΑ");
             this.btn_search_editKratisi.UseVisualStyleBackColor = true;
             this.btn_search_editKratisi.Click += new System.EventHandler(this.btn_search_editKratisi_Click);
             // 
@@ -1205,7 +1226,7 @@
             this.lbl_checkIn_editKratisi.AutoSize = true;
             this.lbl_checkIn_editKratisi.Location = new System.Drawing.Point(22, 134);
             this.lbl_checkIn_editKratisi.Name = "lbl_checkIn_editKratisi";
-            this.lbl_checkIn_editKratisi.Size = new System.Drawing.Size(57, 13);
+            this.lbl_checkIn_editKratisi.Size = new System.Drawing.Size(65, 13);
             this.lbl_checkIn_editKratisi.TabIndex = 23;
             this.lbl_checkIn_editKratisi.Text = "CHECK IN";
             // 
@@ -1214,7 +1235,7 @@
             this.lbl_arithmosDwmatiou_editKratisi.AutoSize = true;
             this.lbl_arithmosDwmatiou_editKratisi.Location = new System.Drawing.Point(22, 266);
             this.lbl_arithmosDwmatiou_editKratisi.Name = "lbl_arithmosDwmatiou_editKratisi";
-            this.lbl_arithmosDwmatiou_editKratisi.Size = new System.Drawing.Size(109, 13);
+            this.lbl_arithmosDwmatiou_editKratisi.Size = new System.Drawing.Size(125, 13);
             this.lbl_arithmosDwmatiou_editKratisi.TabIndex = 27;
             this.lbl_arithmosDwmatiou_editKratisi.Text = "ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ";
             // 
@@ -1225,6 +1246,7 @@
             this.btn_edit_kratisi.Size = new System.Drawing.Size(88, 23);
             this.btn_edit_kratisi.TabIndex = 19;
             this.btn_edit_kratisi.Text = "ΕΝΗΜΕΡΩΣΗ";
+            this.toolTip1.SetToolTip(this.btn_edit_kratisi, "ΕΝΗΜΕΡΩΣΗ ΠΕΔΙΩΝ ΣΤΟ ΣΥΣΤΗΜΑ");
             this.btn_edit_kratisi.UseVisualStyleBackColor = true;
             this.btn_edit_kratisi.Click += new System.EventHandler(this.btn_edit_kratisi_Click);
             // 
@@ -1233,7 +1255,7 @@
             this.lbl_typosKratisis_editKratisi.AutoSize = true;
             this.lbl_typosKratisis_editKratisi.Location = new System.Drawing.Point(22, 233);
             this.lbl_typosKratisis_editKratisi.Name = "lbl_typosKratisis_editKratisi";
-            this.lbl_typosKratisis_editKratisi.Size = new System.Drawing.Size(99, 13);
+            this.lbl_typosKratisis_editKratisi.Size = new System.Drawing.Size(113, 13);
             this.lbl_typosKratisis_editKratisi.TabIndex = 26;
             this.lbl_typosKratisis_editKratisi.Text = "ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ";
             // 
@@ -1242,7 +1264,7 @@
             this.lbl_typosDwmatiou_editKratisi.AutoSize = true;
             this.lbl_typosDwmatiou_editKratisi.Location = new System.Drawing.Point(22, 200);
             this.lbl_typosDwmatiou_editKratisi.Name = "lbl_typosDwmatiou_editKratisi";
-            this.lbl_typosDwmatiou_editKratisi.Size = new System.Drawing.Size(99, 13);
+            this.lbl_typosDwmatiou_editKratisi.Size = new System.Drawing.Size(113, 13);
             this.lbl_typosDwmatiou_editKratisi.TabIndex = 25;
             this.lbl_typosDwmatiou_editKratisi.Text = "ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ";
             // 
@@ -1251,7 +1273,7 @@
             this.lbl_checkOut_editKratisi.AutoSize = true;
             this.lbl_checkOut_editKratisi.Location = new System.Drawing.Point(22, 167);
             this.lbl_checkOut_editKratisi.Name = "lbl_checkOut_editKratisi";
-            this.lbl_checkOut_editKratisi.Size = new System.Drawing.Size(69, 13);
+            this.lbl_checkOut_editKratisi.Size = new System.Drawing.Size(78, 13);
             this.lbl_checkOut_editKratisi.TabIndex = 24;
             this.lbl_checkOut_editKratisi.Text = "CHECK OUT";
             // 
@@ -1260,7 +1282,7 @@
             this.lbl_idPelati_editKratisi.AutoSize = true;
             this.lbl_idPelati_editKratisi.Location = new System.Drawing.Point(22, 35);
             this.lbl_idPelati_editKratisi.Name = "lbl_idPelati_editKratisi";
-            this.lbl_idPelati_editKratisi.Size = new System.Drawing.Size(61, 13);
+            this.lbl_idPelati_editKratisi.Size = new System.Drawing.Size(70, 13);
             this.lbl_idPelati_editKratisi.TabIndex = 1;
             this.lbl_idPelati_editKratisi.Text = "ID ΠΕΛΑΤΗ";
             // 
@@ -1269,7 +1291,7 @@
             this.lbl_taftotitta_edit_kratisi.AutoSize = true;
             this.lbl_taftotitta_edit_kratisi.Location = new System.Drawing.Point(22, 101);
             this.lbl_taftotitta_edit_kratisi.Name = "lbl_taftotitta_edit_kratisi";
-            this.lbl_taftotitta_edit_kratisi.Size = new System.Drawing.Size(110, 13);
+            this.lbl_taftotitta_edit_kratisi.Size = new System.Drawing.Size(126, 13);
             this.lbl_taftotitta_edit_kratisi.TabIndex = 2;
             this.lbl_taftotitta_edit_kratisi.Text = "ΤΑΥΤΟΤΗΤΑ ΠΕΛΑΤΗ";
             // 
@@ -1310,7 +1332,7 @@
             this.grpbox_add_kratisi.Controls.Add(this.lbl_typosKratisis_add_kratisi);
             this.grpbox_add_kratisi.Controls.Add(this.lbl_typosDwmatiou_add_kratisi);
             this.grpbox_add_kratisi.Controls.Add(this.lbl_checkOut_add_kratisi);
-            this.grpbox_add_kratisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.grpbox_add_kratisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.grpbox_add_kratisi.Location = new System.Drawing.Point(8, 6);
             this.grpbox_add_kratisi.Name = "grpbox_add_kratisi";
             this.grpbox_add_kratisi.Size = new System.Drawing.Size(399, 414);
@@ -1320,11 +1342,12 @@
             // 
             // btn_clear_add_kratisi
             // 
-            this.btn_clear_add_kratisi.Location = new System.Drawing.Point(237, 381);
+            this.btn_clear_add_kratisi.Location = new System.Drawing.Point(228, 381);
             this.btn_clear_add_kratisi.Name = "btn_clear_add_kratisi";
             this.btn_clear_add_kratisi.Size = new System.Drawing.Size(75, 23);
             this.btn_clear_add_kratisi.TabIndex = 50;
             this.btn_clear_add_kratisi.Text = "CLEAR";
+            this.toolTip1.SetToolTip(this.btn_clear_add_kratisi, "ΚΑΘΑΡΙΣΜΟΣ ΠΕΔΙΩΝ ΚΡΑΤΗΣΗΣ");
             this.btn_clear_add_kratisi.UseVisualStyleBackColor = true;
             this.btn_clear_add_kratisi.Click += new System.EventHandler(this.btn_clear_add_kratisi_Click);
             // 
@@ -1341,7 +1364,7 @@
             this.lbl_taftotitta_add_kratisi.AutoSize = true;
             this.lbl_taftotitta_add_kratisi.Location = new System.Drawing.Point(17, 38);
             this.lbl_taftotitta_add_kratisi.Name = "lbl_taftotitta_add_kratisi";
-            this.lbl_taftotitta_add_kratisi.Size = new System.Drawing.Size(110, 13);
+            this.lbl_taftotitta_add_kratisi.Size = new System.Drawing.Size(126, 13);
             this.lbl_taftotitta_add_kratisi.TabIndex = 47;
             this.lbl_taftotitta_add_kratisi.Text = "ΤΑΥΤΟΤΗΤΑ ΠΕΛΑΤΗ";
             // 
@@ -1406,16 +1429,17 @@
             this.dateTimePicker_checkIn_add_kratisi.Name = "dateTimePicker_checkIn_add_kratisi";
             this.dateTimePicker_checkIn_add_kratisi.Size = new System.Drawing.Size(166, 20);
             this.dateTimePicker_checkIn_add_kratisi.TabIndex = 20;
-            this.dateTimePicker_checkIn_add_kratisi.Value = new System.DateTime(2015, 12, 24, 0, 0, 0, 0);
+            this.dateTimePicker_checkIn_add_kratisi.Value = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_checkIn_add_kratisi.ValueChanged += new System.EventHandler(this.dateTimePicker_checkIn_add_kratisi_ValueChanged);
             // 
             // btn_add_kratisi
             // 
-            this.btn_add_kratisi.Location = new System.Drawing.Point(318, 381);
+            this.btn_add_kratisi.Location = new System.Drawing.Point(309, 381);
             this.btn_add_kratisi.Name = "btn_add_kratisi";
-            this.btn_add_kratisi.Size = new System.Drawing.Size(75, 23);
+            this.btn_add_kratisi.Size = new System.Drawing.Size(84, 23);
             this.btn_add_kratisi.TabIndex = 19;
             this.btn_add_kratisi.Text = "ΠΡΟΣΘΗΚΗ";
+            this.toolTip1.SetToolTip(this.btn_add_kratisi, "ΠΡΟΣΘΗΚΗ ΚΡΑΤΗΣΗΣ ΣΤΟ ΣΥΣΤΗΜΑ");
             this.btn_add_kratisi.UseVisualStyleBackColor = true;
             this.btn_add_kratisi.Click += new System.EventHandler(this.btn_add_kratisi_Click);
             // 
@@ -1424,7 +1448,7 @@
             this.lbl_group_add_kratisi.AutoSize = true;
             this.lbl_group_add_kratisi.Location = new System.Drawing.Point(17, 318);
             this.lbl_group_add_kratisi.Name = "lbl_group_add_kratisi";
-            this.lbl_group_add_kratisi.Size = new System.Drawing.Size(48, 13);
+            this.lbl_group_add_kratisi.Size = new System.Drawing.Size(54, 13);
             this.lbl_group_add_kratisi.TabIndex = 18;
             this.lbl_group_add_kratisi.Text = "ΓΚΡΟΥΠ";
             // 
@@ -1433,7 +1457,7 @@
             this.lbl_exoflisiKratisis_add_kratisi.AutoSize = true;
             this.lbl_exoflisiKratisis_add_kratisi.Location = new System.Drawing.Point(17, 358);
             this.lbl_exoflisiKratisis_add_kratisi.Name = "lbl_exoflisiKratisis_add_kratisi";
-            this.lbl_exoflisiKratisis_add_kratisi.Size = new System.Drawing.Size(122, 13);
+            this.lbl_exoflisiKratisis_add_kratisi.Size = new System.Drawing.Size(139, 13);
             this.lbl_exoflisiKratisis_add_kratisi.TabIndex = 1;
             this.lbl_exoflisiKratisis_add_kratisi.Text = "ΕΞΟΦΛΗΣΗ ΚΡΑΤΗΣΗΣ";
             // 
@@ -1442,7 +1466,7 @@
             this.lbl_troposPliromis_add_kratisi.AutoSize = true;
             this.lbl_troposPliromis_add_kratisi.Location = new System.Drawing.Point(17, 278);
             this.lbl_troposPliromis_add_kratisi.Name = "lbl_troposPliromis_add_kratisi";
-            this.lbl_troposPliromis_add_kratisi.Size = new System.Drawing.Size(110, 13);
+            this.lbl_troposPliromis_add_kratisi.Size = new System.Drawing.Size(125, 13);
             this.lbl_troposPliromis_add_kratisi.TabIndex = 2;
             this.lbl_troposPliromis_add_kratisi.Text = "ΤΡΟΠΟΣ ΠΛΗΡΩΜΗΣ";
             // 
@@ -1451,7 +1475,7 @@
             this.lbl_checkIn_add_kratisi.AutoSize = true;
             this.lbl_checkIn_add_kratisi.Location = new System.Drawing.Point(17, 78);
             this.lbl_checkIn_add_kratisi.Name = "lbl_checkIn_add_kratisi";
-            this.lbl_checkIn_add_kratisi.Size = new System.Drawing.Size(57, 13);
+            this.lbl_checkIn_add_kratisi.Size = new System.Drawing.Size(65, 13);
             this.lbl_checkIn_add_kratisi.TabIndex = 3;
             this.lbl_checkIn_add_kratisi.Text = "CHECK IN";
             // 
@@ -1467,7 +1491,7 @@
             this.lbl_arithmosDwmatiou_add_kratisi.AutoSize = true;
             this.lbl_arithmosDwmatiou_add_kratisi.Location = new System.Drawing.Point(17, 238);
             this.lbl_arithmosDwmatiou_add_kratisi.Name = "lbl_arithmosDwmatiou_add_kratisi";
-            this.lbl_arithmosDwmatiou_add_kratisi.Size = new System.Drawing.Size(109, 13);
+            this.lbl_arithmosDwmatiou_add_kratisi.Size = new System.Drawing.Size(125, 13);
             this.lbl_arithmosDwmatiou_add_kratisi.TabIndex = 7;
             this.lbl_arithmosDwmatiou_add_kratisi.Text = "ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ";
             // 
@@ -1476,7 +1500,7 @@
             this.lbl_typosKratisis_add_kratisi.AutoSize = true;
             this.lbl_typosKratisis_add_kratisi.Location = new System.Drawing.Point(17, 198);
             this.lbl_typosKratisis_add_kratisi.Name = "lbl_typosKratisis_add_kratisi";
-            this.lbl_typosKratisis_add_kratisi.Size = new System.Drawing.Size(99, 13);
+            this.lbl_typosKratisis_add_kratisi.Size = new System.Drawing.Size(113, 13);
             this.lbl_typosKratisis_add_kratisi.TabIndex = 6;
             this.lbl_typosKratisis_add_kratisi.Text = "ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ";
             // 
@@ -1485,7 +1509,7 @@
             this.lbl_typosDwmatiou_add_kratisi.AutoSize = true;
             this.lbl_typosDwmatiou_add_kratisi.Location = new System.Drawing.Point(17, 158);
             this.lbl_typosDwmatiou_add_kratisi.Name = "lbl_typosDwmatiou_add_kratisi";
-            this.lbl_typosDwmatiou_add_kratisi.Size = new System.Drawing.Size(99, 13);
+            this.lbl_typosDwmatiou_add_kratisi.Size = new System.Drawing.Size(113, 13);
             this.lbl_typosDwmatiou_add_kratisi.TabIndex = 5;
             this.lbl_typosDwmatiou_add_kratisi.Text = "ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ";
             // 
@@ -1494,12 +1518,14 @@
             this.lbl_checkOut_add_kratisi.AutoSize = true;
             this.lbl_checkOut_add_kratisi.Location = new System.Drawing.Point(17, 118);
             this.lbl_checkOut_add_kratisi.Name = "lbl_checkOut_add_kratisi";
-            this.lbl_checkOut_add_kratisi.Size = new System.Drawing.Size(69, 13);
+            this.lbl_checkOut_add_kratisi.Size = new System.Drawing.Size(78, 13);
             this.lbl_checkOut_add_kratisi.TabIndex = 4;
             this.lbl_checkOut_add_kratisi.Text = "CHECK OUT";
             // 
             // tab_dwmatia
             // 
+            this.tab_dwmatia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_dwmatia.BackgroundImage")));
+            this.tab_dwmatia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tab_dwmatia.Controls.Add(this.btnPrintKatastasiDwmatiwn);
             this.tab_dwmatia.Controls.Add(this.grpBoxDiathesimotitaSeLbls);
             this.tab_dwmatia.Controls.Add(this.grpBoxKatastasiDwmatiwn);
@@ -1507,14 +1533,14 @@
             this.tab_dwmatia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.tab_dwmatia.Location = new System.Drawing.Point(4, 22);
             this.tab_dwmatia.Name = "tab_dwmatia";
-            this.tab_dwmatia.Size = new System.Drawing.Size(1260, 704);
+            this.tab_dwmatia.Size = new System.Drawing.Size(1358, 742);
             this.tab_dwmatia.TabIndex = 2;
             this.tab_dwmatia.Text = "ΚΑΤΑΣΤΑΣΗ ΔΩΜΑΤΙΩΝ";
             this.tab_dwmatia.UseVisualStyleBackColor = true;
             // 
             // btnPrintKatastasiDwmatiwn
             // 
-            this.btnPrintKatastasiDwmatiwn.Location = new System.Drawing.Point(525, 637);
+            this.btnPrintKatastasiDwmatiwn.Location = new System.Drawing.Point(692, 170);
             this.btnPrintKatastasiDwmatiwn.Name = "btnPrintKatastasiDwmatiwn";
             this.btnPrintKatastasiDwmatiwn.Size = new System.Drawing.Size(75, 23);
             this.btnPrintKatastasiDwmatiwn.TabIndex = 26;
@@ -1530,7 +1556,8 @@
             this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnMonoklina);
             this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnDiklina);
             this.grpBoxDiathesimotitaSeLbls.Controls.Add(this.lblKatastasiDwmatiwnFardiklina);
-            this.grpBoxDiathesimotitaSeLbls.Location = new System.Drawing.Point(839, 14);
+            this.grpBoxDiathesimotitaSeLbls.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.grpBoxDiathesimotitaSeLbls.Location = new System.Drawing.Point(933, 14);
             this.grpBoxDiathesimotitaSeLbls.Name = "grpBoxDiathesimotitaSeLbls";
             this.grpBoxDiathesimotitaSeLbls.Size = new System.Drawing.Size(288, 92);
             this.grpBoxDiathesimotitaSeLbls.TabIndex = 25;
@@ -1566,7 +1593,7 @@
             this.lblKatastasiDwmatiwnMonoklina.AutoSize = true;
             this.lblKatastasiDwmatiwnMonoklina.Location = new System.Drawing.Point(43, 63);
             this.lblKatastasiDwmatiwnMonoklina.Name = "lblKatastasiDwmatiwnMonoklina";
-            this.lblKatastasiDwmatiwnMonoklina.Size = new System.Drawing.Size(74, 13);
+            this.lblKatastasiDwmatiwnMonoklina.Size = new System.Drawing.Size(85, 13);
             this.lblKatastasiDwmatiwnMonoklina.TabIndex = 3;
             this.lblKatastasiDwmatiwnMonoklina.Text = "ΜΟΝΟΚΛΙΝΑ =";
             // 
@@ -1575,7 +1602,7 @@
             this.lblKatastasiDwmatiwnDiklina.AutoSize = true;
             this.lblKatastasiDwmatiwnDiklina.Location = new System.Drawing.Point(179, 32);
             this.lblKatastasiDwmatiwnDiklina.Name = "lblKatastasiDwmatiwnDiklina";
-            this.lblKatastasiDwmatiwnDiklina.Size = new System.Drawing.Size(60, 13);
+            this.lblKatastasiDwmatiwnDiklina.Size = new System.Drawing.Size(69, 13);
             this.lblKatastasiDwmatiwnDiklina.TabIndex = 2;
             this.lblKatastasiDwmatiwnDiklina.Text = "ΔΥΚΛΙΝΑ =";
             // 
@@ -1584,7 +1611,7 @@
             this.lblKatastasiDwmatiwnFardiklina.AutoSize = true;
             this.lblKatastasiDwmatiwnFardiklina.Location = new System.Drawing.Point(43, 32);
             this.lblKatastasiDwmatiwnFardiklina.Name = "lblKatastasiDwmatiwnFardiklina";
-            this.lblKatastasiDwmatiwnFardiklina.Size = new System.Drawing.Size(87, 13);
+            this.lblKatastasiDwmatiwnFardiklina.Size = new System.Drawing.Size(100, 13);
             this.lblKatastasiDwmatiwnFardiklina.TabIndex = 1;
             this.lblKatastasiDwmatiwnFardiklina.Text = "ΦΑΡΔΥΚΛΙΝΑ = ";
             // 
@@ -1592,7 +1619,8 @@
             // 
             this.grpBoxKatastasiDwmatiwn.Controls.Add(this.rBtnKatastasiDwmatiwnAdia);
             this.grpBoxKatastasiDwmatiwn.Controls.Add(this.rBtnKatastasiDwmatiwnOla);
-            this.grpBoxKatastasiDwmatiwn.Location = new System.Drawing.Point(502, 25);
+            this.grpBoxKatastasiDwmatiwn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.grpBoxKatastasiDwmatiwn.Location = new System.Drawing.Point(690, 25);
             this.grpBoxKatastasiDwmatiwn.Name = "grpBoxKatastasiDwmatiwn";
             this.grpBoxKatastasiDwmatiwn.Size = new System.Drawing.Size(200, 81);
             this.grpBoxKatastasiDwmatiwn.TabIndex = 24;
@@ -1604,7 +1632,7 @@
             this.rBtnKatastasiDwmatiwnAdia.AutoSize = true;
             this.rBtnKatastasiDwmatiwnAdia.Location = new System.Drawing.Point(127, 37);
             this.rBtnKatastasiDwmatiwnAdia.Name = "rBtnKatastasiDwmatiwnAdia";
-            this.rBtnKatastasiDwmatiwnAdia.Size = new System.Drawing.Size(54, 17);
+            this.rBtnKatastasiDwmatiwnAdia.Size = new System.Drawing.Size(59, 17);
             this.rBtnKatastasiDwmatiwnAdia.TabIndex = 1;
             this.rBtnKatastasiDwmatiwnAdia.Text = "ΑΔΕΙΑ";
             this.rBtnKatastasiDwmatiwnAdia.UseVisualStyleBackColor = true;
@@ -1616,7 +1644,7 @@
             this.rBtnKatastasiDwmatiwnOla.Checked = true;
             this.rBtnKatastasiDwmatiwnOla.Location = new System.Drawing.Point(31, 37);
             this.rBtnKatastasiDwmatiwnOla.Name = "rBtnKatastasiDwmatiwnOla";
-            this.rBtnKatastasiDwmatiwnOla.Size = new System.Drawing.Size(46, 17);
+            this.rBtnKatastasiDwmatiwnOla.Size = new System.Drawing.Size(49, 17);
             this.rBtnKatastasiDwmatiwnOla.TabIndex = 0;
             this.rBtnKatastasiDwmatiwnOla.TabStop = true;
             this.rBtnKatastasiDwmatiwnOla.Text = "ΟΛΑ";
@@ -1628,14 +1656,16 @@
             this.dataGridViewKatastasiDwmatiwn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewKatastasiDwmatiwn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewKatastasiDwmatiwn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewKatastasiDwmatiwn.Location = new System.Drawing.Point(40, 112);
+            this.dataGridViewKatastasiDwmatiwn.Location = new System.Drawing.Point(8, 14);
             this.dataGridViewKatastasiDwmatiwn.Name = "dataGridViewKatastasiDwmatiwn";
+            this.dataGridViewKatastasiDwmatiwn.ReadOnly = true;
             this.dataGridViewKatastasiDwmatiwn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(560, 485);
+            this.dataGridViewKatastasiDwmatiwn.Size = new System.Drawing.Size(560, 652);
             this.dataGridViewKatastasiDwmatiwn.TabIndex = 23;
             // 
             // tab_oikonomika_stoixeia
             // 
+            this.tab_oikonomika_stoixeia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_oikonomika_stoixeia.BackgroundImage")));
             this.tab_oikonomika_stoixeia.Controls.Add(this.txtboxSunoloXrewsisOikonomika);
             this.tab_oikonomika_stoixeia.Controls.Add(this.lblSinolikiXrewsiOikonomika);
             this.tab_oikonomika_stoixeia.Controls.Add(this.label2);
@@ -1651,7 +1681,7 @@
             this.tab_oikonomika_stoixeia.Controls.Add(this.txtboxTaftotitaOikonomikaStoixeia);
             this.tab_oikonomika_stoixeia.Location = new System.Drawing.Point(4, 22);
             this.tab_oikonomika_stoixeia.Name = "tab_oikonomika_stoixeia";
-            this.tab_oikonomika_stoixeia.Size = new System.Drawing.Size(1260, 704);
+            this.tab_oikonomika_stoixeia.Size = new System.Drawing.Size(1358, 742);
             this.tab_oikonomika_stoixeia.TabIndex = 3;
             this.tab_oikonomika_stoixeia.Text = "ΟΙΚΟΝΟΜΙΚΑ ΣΤΟΙΧΕΙΑ";
             this.tab_oikonomika_stoixeia.UseVisualStyleBackColor = true;
@@ -1749,6 +1779,7 @@
             this.btnSearchTaftotitaOikonomika.Name = "btnSearchTaftotitaOikonomika";
             this.btnSearchTaftotitaOikonomika.Size = new System.Drawing.Size(32, 32);
             this.btnSearchTaftotitaOikonomika.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.btnSearchTaftotitaOikonomika, "ΑNΑΖΗΤΗΣΗ ΤΑΥΤΟΤΗΤΑΣ ΣΤΟ ΣΥΣΤΗΜΑ");
             this.btnSearchTaftotitaOikonomika.UseVisualStyleBackColor = true;
             this.btnSearchTaftotitaOikonomika.Click += new System.EventHandler(this.btnSearchTaftotitaOikonomika_Click);
             // 
@@ -1776,8 +1807,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1271, 737);
+            this.ClientSize = new System.Drawing.Size(1346, 725);
             this.Controls.Add(this.tabControlKatastasiDwmatiwn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
@@ -1977,5 +2010,6 @@
         private System.Windows.Forms.Label lblTaftotitaOikonomikaStoixeia;
         private System.Windows.Forms.TextBox txtboxTaftotitaOikonomikaStoixeia;
         private System.Windows.Forms.TextBox txtboxSunoloXrewsisOikonomika;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

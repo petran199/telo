@@ -16,6 +16,8 @@ namespace telo
         public MainWindow()
         {
             InitializeComponent();
+      
+           
         }
 
         #region global variables
@@ -215,14 +217,6 @@ namespace telo
             }               
         }
 
-        public void txtValidationIsEmpty(System.Windows.Forms.TextBox tb)
-        {
-            if (String.IsNullOrEmpty(tb.Text))
-            {
-                MessageBox.Show("Υποχρεωτικό πεδίο!");
-                tb.Focus();
-            }
-        }
 
         private void IsNumber(object sender, EventArgs e)
         {
@@ -534,28 +528,6 @@ namespace telo
                 }
             }
 
-            //DataTable dt = new DataTable();
-            //SqlDataAdapter sda = new SqlDataAdapter(@"select CUSTOMERS.idPElati AS 'ID ΠΕΛΑΤΗ',
-            //                                                 [GROUP].perigrafi AS 'ΓΚΡΟΥΠ',
-            //                                                 CUSTOMERS.epwnimo AS ΕΠΩΝΥΜΟ,
-            //                                                 CUSTOMERS.onoma AS 'ΟΝΟΜΑ', 
-            //                                                 CUSTOMERS.taftotita AS 'ΤΑΥΤΟΤΗΤΑ',
-            //                                                 CUSTOMERS.afm AS 'ΑΦΜ',
-            //                                                 CUSTOMERS.tilefwno AS 'ΤΗΛΕΦΩΝΟ',
-            //                                                 CUSTOMERS.xwra AS 'ΧΩΡΑ',
-            //                                                 CUSTOMERS.poli AS 'ΠΟΛΗ',
-            //                                                 CUSTOMERS.odos AS 'ΟΔΟΣ',
-            //                                                 CUSTOMERS.arithmos AS 'ΑΡΙΘΜΟΣ'
-            //                                            from CUSTOMERS,[GROUP]
-            //                                           where CUSTOMERS.idGroup=[GROUP].idGroup
-            //                                             and ((CUSTOMERS.taftotita= '" + txtbox_taftotita_edit_customer.Text + @"') 
-            //                                              or (idPelati= '" + txtbox_idPelati_edit_customer.Text + @"')) 
-            //                                           ORDER BY CUSTOMERS.epwnimo ASC", con);
-            
-            //sda.Fill(dt);
-
-            //dataGridView_pelates.DataSource = dt;
-
             
         }
 
@@ -657,25 +629,7 @@ namespace telo
 
         private void btn_search_customer_delete_Click(object sender, EventArgs e)
         {
-            //con.Open();
-            //DataTable dt = new DataTable();
-
-            //SqlDataAdapter sda = new SqlDataAdapter(@" select CUSTOMERS.idPElati AS 'ID ΠΕΛΑΤΗ',
-            //                                                  [GROUP].perigrafi AS 'ΓΚΡΟΥΠ',
-            //                                                  CUSTOMERS.epwnimo AS ΕΠΩΝΥΜΟ,
-            //                                                  CUSTOMERS.onoma AS 'ΟΝΟΜΑ',
-            //                                                  CUSTOMERS.taftotita AS 'ΤΑΥΤΟΤΗΤΑ',
-            //                                                  CUSTOMERS.afm AS 'ΑΦΜ',
-            //                                                  CUSTOMERS.tilefwno AS 'ΤΗΛΕΦΩΝΟ',
-            //                                                  CUSTOMERS.xwra AS 'ΧΩΡΑ',
-            //                                                  CUSTOMERS.poli AS 'ΠΟΛΗ', 
-            //                                                  CUSTOMERS.odos AS 'ΟΔΟΣ',
-            //                                                  CUSTOMERS.arithmos AS 'ΑΡΙΘΜΟΣ'
-            //                                             from CUSTOMERS,[GROUP]
-            //                                            where CUSTOMERS.idGroup=[GROUP].idGroup
-            //                                              and ((CUSTOMERS.taftotita= '" + txtbox_taftotita_delete_customer.Text + @"')
-            //                                               or (idPelati= '" + txtbox_idPelati_delete_customer.Text + @"')) 
-            //                                         ORDER BY CUSTOMERS.epwnimo ASC", con);
+            
             using (SqlCommand cmd = new SqlCommand(@" select CUSTOMERS.idPElati AS 'ID ΠΕΛΑΤΗ',
                                                               [GROUP].perigrafi AS 'ΓΚΡΟΥΠ',
                                                               CUSTOMERS.epwnimo AS ΕΠΩΝΥΜΟ,
@@ -797,9 +751,9 @@ namespace telo
                 // Create Command and Execute the Transactions
                 try
                 {
-                    // (select idPelati from CUSTOMERS where taftotita='" + txtbox_taftotitta_add_kratisi.Text + "'))";
-                    myCommand.CommandText = @"insert into KRATISEIS(idExoflisiKratisis, idDWmatiou, idTyposKratisis, idGroup, hmerominiaAfixis, hmerominiaAnaxwrisis, idTroposPlirwmis, idPelati)
-                                              values ('" + checkBox_exoflisiKratisis_add_kratisi.Checked + @"',
+                    
+                    myCommand.CommandText = @"insert into KRATISEIS(idExoflisiKratisis, idDWmatiou, idTyposKratisis, idGroup, hmerominiaAfixis, hmerominiaAnaxwrisis, idTroposPlirwmis, idPelati) 
+                                                values ('" + checkBox_exoflisiKratisis_add_kratisi.Checked + @"',
                                                       '" + comboBox_arithmosDwmatiou_add_kratisi.SelectedValue + @"',
                                                       '" + comboBox_typos_kratisis_add_kratisi.SelectedValue + @"',
                                                       '" + comboBox_group_add_kratisi.SelectedValue + @"',
@@ -814,9 +768,10 @@ namespace telo
                     myCommand.ExecuteNonQuery();
 
                     myTrans.Commit();
-
+                     
                     MessageBox.Show("ΠΡΟΣΤΕΘΗΚΕ ΕΠΙΤΥΧΩΣ");
-                    clearFields(grpbox_add_kratisi);
+                    //clearFields(grpbox_add_kratisi);
+
                     //grid refresh
                     dataGridViewRefresh(@"SELECT KRATISEIS.idKratisis as'ID ΚΡΑΤΗΣΗΣ', 
                                                  CUSTOMERS.idPelati as 'ID ΠΕΛΑΤΗ',
@@ -861,6 +816,7 @@ namespace telo
                 }
                 finally
                 {
+                    clearFields(grpbox_add_kratisi);
                     con.Close();
                 }
             }
@@ -1091,66 +1047,6 @@ namespace telo
                     con.Close();
                 }
 
-                //    con.Open();
-                //DataTable dt = new DataTable();
-                //SqlDataAdapter sda = new SqlDataAdapter(@"select KRATISEIS.idKratisis as 'ID ΚΡΑΤΗΣΗΣ', 
-                //                                                 CUSTOMERS.idPelati as 'ID ΠΕΛΑΤΗ',
-                //                                                 CUSTOMERS.taftotita as 'ΤΑΥΤΟΤΗΤΑ ΠΕΛΑΤΗ',
-                //                                                 CUSTOMERS.epwnimo as 'ΕΠΩΝΥΜΟ',
-                //                                                 CUSTOMERS.onoma as 'ΟΝΟΜΑ',
-                //                                                 ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
-                //                                                 ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
-                //                                                 [GROUP].perigrafi as 'ΓΡΟΥΠ',
-                //                                                 KRATISEIS.hmerominiaAfixis as 'ΗΜΕΡΟΜΗΝΙΑ ΑΦΙΞΗΣ',
-                //                                                 KRATISEIS.hmerominiaAnaxwrisis as 'ΗΜΕΡΟΜΗΝΙΑ ΑΝΑΧΩΡΗΣΗΣ',
-                //                                                 TyposKratisis.perigrafi as 'ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ',
-                //                                                 tropoiPlirwmis.perigrafi as 'ΤΡΟΠΟΣ ΠΛΗΡΩΜΗΣ',
-                //                                                 exoflisiKratisis.perigrafi as 'ΕΞΟΦΛΗΣΗ ΚΡΑΤΗΣΗΣ',
-                //                                                 KRATISEIS.idExoflisiKratisis as 'CHECKED STATUS'
-                //                                            from KRATISEIS,ROOMS,ROOMTYPE,CUSTOMERS,[GROUP],tropoiPlirwmis,TyposKratisis, exoflisiKratisis
-                //                                           where (KRATISEIS.idKratisis=(select idKratisis from KRATISEIS where idKratisis='" + txtbox_idKratisis_editKratisi.Text + @"')
-                //                                              or KRATISEIS.idPelati = (select idPelati from CUSTOMERS where idPelati='" + txtbox_idPelati_editKratisi.Text + @"')
-                //                                              or KRATISEIS.idPelati = (select idPelati from CUSTOMERS where taftotita = N'" + txtbox_taftotitaPelati_editKratisi.Text + @"'))
-                //                                             and KRATISEIS.idDwmatiou = ROOMS.idDwmatiou
-                //                                             and KRATISEIS.idExoflisiKratisis = exoflisiKratisis.IdExoflisiKratisis
-                //                                             and KRATISEIS.idGroup =[GROUP].idGroup and KRATISEIS.idPelati = CUSTOMERS.idPelati
-                //                                             and KRATISEIS.idTroposPlirwmis = tropoiPlirwmis.idTroposPlirwmis
-                //                                             and KRATISEIS.idTyposKratisis = TyposKratisis.idTyposKratisis
-                //                                             and ROOMS.idTyposDwmatiou = ROOMTYPE.idTyposDwmatiou", con);
-
-
-                //sda.Fill(dt);
-                //dataGridView_kratisi.DataSource = dt;
-
-
-                //txtbox_idKratisis_editKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[0].Value.ToString();
-
-                //txtbox_idPelati_editKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[1].Value.ToString();
-
-                //txtbox_taftotitaPelati_editKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[2].Value.ToString();
-
-                //dateTimePicker_checkIn_editKratisi.Value = Convert.ToDateTime(dataGridView_kratisi.CurrentRow.Cells[8].Value);
-
-                //dateTimePicker_checkOut_editKratisi.Value = Convert.ToDateTime(dataGridView_kratisi.CurrentRow.Cells[9].Value);
-
-                //comboBox_typosDwmatiou_editKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[6].Value.ToString();
-
-                //comboBox_typosKratisis_editKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[10].Value.ToString();
-
-                //comboBox_arithmosDwmatiou_editKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[5].Value.ToString();
-                //arDwm = comboBox_arithmosDwmatiou_editKratisi.Text;
-
-                //comboBox_troposPlirwmis_editKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[11].Value.ToString();
-
-                //comboBox_group_edit_kratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[7].Value.ToString();
-
-                //ckbox_exoflisiKratisis_editKratisi.Checked = Convert.ToBoolean(dataGridView_kratisi.SelectedRows[0].Cells[13].Value);
-                ////trexei kai edw i sinartisi gia na vgazei aftomatos ta apotelesmata ston arithmo dwmatiou
-                //FillRoomsDropDown(comboBox_arithmosDwmatiou_editKratisi, "idDwmatiou", "arithmosDwmatiou", dateTimePicker_checkIn_editKratisi.Value.Date, dateTimePicker_checkOut_editKratisi.Value.Date, comboBox_typosDwmatiou_editKratisi.SelectedValue.ToString(), true);
-
-
-
-                //con.Close();
             }
         }
 
@@ -1345,42 +1241,7 @@ namespace telo
 
                     con.Close();
                 }
-                //    con.Open();
-                //DataTable dt = new DataTable();
-                //SqlDataAdapter sda = new SqlDataAdapter(@"select KRATISEIS.idKratisis as'ID ΚΡΑΤΗΣΗΣ', 
-                //                                                 CUSTOMERS.idPelati as 'ID ΠΕΛΑΤΗ',
-                //                                                 CUSTOMERS.taftotita as 'ΤΑΥΤΟΤΗΤΑ ΠΕΛΑΤΗ',
-                //                                                 CUSTOMERS.epwnimo as 'ΕΠΩΝΥΜΟ',
-                //                                                 CUSTOMERS.onoma as 'ΟΝΟΜΑ',
-                //                                                 ROOMS.arithmosDwmatiou as 'ΑΡΙΘΜΟΣ ΔΩΜΑΤΙΟΥ',
-                //                                                 ROOMTYPE.perigrafi as 'ΤΥΠΟΣ ΔΩΜΑΤΙΟΥ',
-                //                                                 [GROUP].perigrafi as 'ΓΡΟΥΠ',
-                //                                                 KRATISEIS.hmerominiaAfixis as 'ΗΜΕΡΟΜΗΝΙΑ ΑΦΙΞΗΣ',
-                //                                                 KRATISEIS.hmerominiaAnaxwrisis as 'ΗΜΕΡΟΜΗΝΙΑ ΑΝΑΧΩΡΗΣΗΣ',
-                //                                                 TyposKratisis.perigrafi as 'ΤΥΠΟΣ ΚΡΑΤΗΣΗΣ',
-                //                                                 tropoiPlirwmis.perigrafi as 'ΤΡΟΠΟΣ ΠΛΗΡΩΜΗΣ',
-                //                                                 exoflisiKratisis.perigrafi as 'ΕΞΟΦΛΗΣΗ ΚΡΑΤΗΣΗΣ'
-                //                                            from KRATISEIS,ROOMS,ROOMTYPE,CUSTOMERS,[GROUP],tropoiPlirwmis,TyposKratisis, exoflisiKratisis
-                //                                           where (KRATISEIS.idPelati=
-                //                                                 (select idPelati from CUSTOMERS 
-                //                                                   where taftotita='" + txtbox_taftotitaPelati_deleteKratisi.Text + @"') 
-                //                                                      or (KRATISEIS.idKratisis='" + txtbox_idKratisis_deleteKratisi.Text + @"') )
-                //                                             and KRATISEIS.idDwmatiou=ROOMS.idDwmatiou
-                //                                             and KRATISEIS.idExoflisiKratisis=exoflisiKratisis.IdExoflisiKratisis
-                //                                             and KRATISEIS.idGroup=[GROUP].idGroup
-                //                                             and KRATISEIS.idPelati=CUSTOMERS.idPelati
-                //                                             and KRATISEIS.idTroposPlirwmis=tropoiPlirwmis.idTroposPlirwmis
-                //                                             and KRATISEIS.idTyposKratisis=TyposKratisis.idTyposKratisis 
-                //                                             and ROOMS.idTyposDwmatiou=ROOMTYPE.idTyposDwmatiou
-                //                                           ORDER BY hmerominiaAfixis DESC ", con);
-
-                //sda.Fill(dt);
-                //dataGridView_kratisi.DataSource = dt;
-
-                //txtbox_idKratisis_deleteKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[0].Value.ToString();
-                //txtbox_taftotitaPelati_deleteKratisi.Text = dataGridView_kratisi.SelectedRows[0].Cells[2].Value.ToString();
-
-                //con.Close();
+                
             }
         }
 
@@ -1447,8 +1308,11 @@ namespace telo
         }
         #endregion katastasi dwmatiwn
 
+        #region Main Window
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+    
             //grid pelates refresh
             dataGridViewRefresh(@"select CUSTOMERS.idPElati AS 'ID ΠΕΛΑΤΗ',
                                          [GROUP].perigrafi AS 'ΓΚΡΟΥΠ',
@@ -1526,6 +1390,7 @@ namespace telo
         {
             Application.Exit();
         }
+        #endregion Main Window
 
         private void tabControlKatastasiDwmatiwn_Selected(object sender, TabControlEventArgs e)
         {
